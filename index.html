@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aprender Português — Índice de Lições</title>
+<style>
+  :root{
+    --verde:#2f6b4f; --verde-claro:#e4efe7; --vermelho:#b03a3a;
+    --azul-esc:#2b4a63; --areia:#f6f0e9; --texto:#22303a; --cinza:#8a969e;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",Helvetica,Arial,sans-serif;background:var(--areia);color:var(--texto);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:24px 18px 60px}
+  header.topo{background:linear-gradient(135deg,#2f6b4f,#3d8a66);color:#fff;border-radius:16px;padding:30px 26px;margin-bottom:20px}
+  header.topo h1{margin:0 0 6px;font-size:2rem;letter-spacing:.5px}
+  header.topo p{margin:0;opacity:.92}
+  .progresso{margin-top:18px;background:rgba(255,255,255,.2);border-radius:20px;height:10px;overflow:hidden}
+  .progresso div{height:100%;background:#ffd97d;width:0;transition:width .4s}
+  .progresso-txt{font-size:.85rem;opacity:.9;margin-top:6px}
+  .filtros{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;align-items:center}
+  #busca{flex:1 1 240px;border:2px solid #ddd3c8;border-radius:22px;padding:9px 16px;font-size:.95rem;font-family:inherit;background:#fff}
+  #busca:focus{outline:none;border-color:var(--verde)}
+  .chip{background:#fff;border:1px solid #ddd3c8;padding:7px 14px;border-radius:20px;font-size:.85rem;font-weight:600;color:var(--azul-esc);cursor:pointer}
+  .chip.ativo{background:var(--verde);color:#fff;border-color:var(--verde)}
+  .cartao{background:#fff;border-radius:14px;padding:18px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.05);display:flex;gap:16px;align-items:flex-start;transition:transform .15s}
+  .cartao:hover{transform:translateY(-2px)}
+  .cartao.feita{border-left:5px solid var(--verde)}
+  .cartao.emfalta{opacity:.6;border-left:5px solid var(--vermelho)}
+  .corpo{flex:1;min-width:0}
+  .corpo h2{margin:0 0 4px;font-size:1.2rem}
+  .corpo h2 a{color:var(--vermelho);text-decoration:none}
+  .corpo h2 a:hover{text-decoration:underline}
+  .meta{font-size:.82rem;color:var(--cinza);margin-bottom:6px}
+  .badge{display:inline-block;background:var(--verde-claro);color:var(--verde);border-radius:12px;padding:1px 9px;font-size:.75rem;font-weight:700;margin-right:6px}
+  .badge.tema{background:#e6edf3;color:var(--azul-esc)}
+  .badge.erro{background:#fbeaea;color:var(--vermelho)}
+  .desc{font-size:.94rem;margin:0}
+  .acoes{display:flex;flex-direction:column;gap:8px;align-items:stretch;flex:0 0 auto}
+  a.btn{background:var(--verde);color:#fff;text-decoration:none;padding:9px 18px;border-radius:20px;font-size:.9rem;font-weight:600;text-align:center;white-space:nowrap}
+  a.btn:hover{background:#255540}
+  .marcar{background:#fff;border:2px solid #dcd6cc;color:var(--azul-esc);border-radius:20px;padding:7px 14px;font-size:.82rem;font-weight:600;cursor:pointer;font-family:inherit;white-space:nowrap}
+  .marcar.on{background:var(--verde-claro);border-color:var(--verde);color:var(--verde)}
+  .vazio{background:#fff;border-radius:14px;padding:30px;text-align:center;color:var(--cinza)}
+  footer{margin-top:26px;font-size:.85rem;color:var(--cinza);text-align:center}
+  @media (max-width:600px){
+    .cartao{flex-direction:column}
+    .acoes{flex-direction:row;width:100%}
+    a.btn,.marcar{flex:1}
+    header.topo h1{font-size:1.5rem}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="topo">
+  <h1>Aprender Português</h1>
+  <p>Lições de gramática para estudo autónomo · português europeu</p>
+  <div class="progresso"><div id="barra"></div></div>
+  <div class="progresso-txt" id="progressoTxt">—</div>
+</header>
+
+<div class="filtros">
+  <input id="busca" type="search" placeholder="Procurar lição… (ex.: verbos, artigos, B1)">
+  <button class="chip ativo" data-nivel="todos">Todos</button>
+  <button class="chip" data-nivel="A1">A1</button>
+  <button class="chip" data-nivel="A2">A2</button>
+  <button class="chip" data-nivel="B1">B1</button>
+  <button class="chip" data-nivel="B2">B2</button>
+</div>
+
+<div id="lista"></div>
+
+<footer>
+  Estudo autónomo · marque cada lição como concluída para acompanhar o seu progresso.<br>
+  O progresso fica guardado apenas neste navegador.
+</footer>
+
+</div>
+
+<script>
+/* ==========================================================================
+   ADICIONAR UMA LIÇÃO NOVA  ·  ADDING A NEW LESSON
+   --------------------------------------------------------------------------
+   1. Faça upload do ficheiro .html para o repositório (mesma pasta do index).
+   2. Copie um bloco { ... } abaixo e altere os campos.
+   3. Guarde (commit). O site atualiza-se sozinho em cerca de um minuto.
+
+   Só "ficheiro" e "titulo" são obrigatórios. Os restantes são opcionais.
+   ========================================================================== */
+
+const LICOES = [
+
+  {
+    ficheiro: "gramatica_b1_ser_estar.html",
+    titulo:   "Ser ou Estar, Artigos, Pronomes e Ordem da Frase",
+    nivel:    "B1",
+    tema:     "Gramática",
+    duracao:  "45–60 min",
+    descricao:"Diferença entre SER e ESTAR, artigos definidos e indefinidos, contrações, pronomes pessoais e de complemento, ordem das palavras. Inclui exercícios com autocorreção e um texto de leitura."
+  },
+
+  /* ---- Exemplo: descomente e adapte quando criar a próxima lição ----
+  {
+    ficheiro: "pret_perfeito_imperfeito.html",
+    titulo:   "Pretérito Perfeito vs. Imperfeito",
+    nivel:    "B1",
+    tema:     "Verbos",
+    duracao:  "45 min",
+    descricao:"Quando usar cada um dos passados, com exercícios e leitura."
+  },
+  ------------------------------------------------------------------- */
+
+];
+
+/* ====== A partir daqui não é preciso mexer ====== */
+
+let filtroNivel = "todos", filtroTexto = "";
+
+function lerFeitas(){
+  try { return JSON.parse(localStorage.getItem("licoesFeitas") || "[]"); }
+  catch(e){ return []; }
+}
+function guardarFeitas(lista){
+  try { localStorage.setItem("licoesFeitas", JSON.stringify(lista)); } catch(e){}
+}
+function alternar(ficheiro){
+  const feitas = lerFeitas();
+  const i = feitas.indexOf(ficheiro);
+  if(i === -1) feitas.push(ficheiro); else feitas.splice(i,1);
+  guardarFeitas(feitas);
+  desenhar();
+}
+
+function normalizar(s){
+  return (s||"").toLowerCase().normalize("NFD")
+    .replace(new RegExp("[\\u0300-\\u036f]","g"),"");
+}
+
+function desenhar(){
+  const feitas = lerFeitas();
+  const lista = document.getElementById("lista");
+  lista.innerHTML = "";
+
+  const visiveis = LICOES.filter(l => {
+    const nivelOk = filtroNivel === "todos" || (l.nivel || "") === filtroNivel;
+    const alvo = normalizar([l.titulo, l.tema, l.nivel, l.descricao, l.ficheiro].join(" "));
+    const textoOk = !filtroTexto || alvo.includes(normalizar(filtroTexto));
+    return nivelOk && textoOk;
+  });
+
+  if(visiveis.length === 0){
+    lista.innerHTML = '<div class="vazio">Nenhuma lição corresponde à pesquisa.</div>';
+  }
+
+  visiveis.forEach(l => {
+    const feita = feitas.includes(l.ficheiro);
+    const cartao = document.createElement("div");
+    cartao.className = "cartao" + (feita ? " feita" : "");
+    cartao.innerHTML =
+      '<div class="corpo">' +
+        '<h2><a href="' + l.ficheiro + '">' + l.titulo + '</a></h2>' +
+        '<div class="meta">' +
+          (l.nivel ? '<span class="badge">' + l.nivel + '</span>' : '') +
+          (l.tema ? '<span class="badge tema">' + l.tema + '</span>' : '') +
+          (l.duracao ? l.duracao + ' · ' : '') +
+          '<code>' + l.ficheiro + '</code>' +
+          '<span class="aviso"></span>' +
+        '</div>' +
+        (l.descricao ? '<p class="desc">' + l.descricao + '</p>' : '') +
+      '</div>' +
+      '<div class="acoes">' +
+        '<a class="btn" href="' + l.ficheiro + '">Abrir lição</a>' +
+        '<button class="marcar' + (feita ? ' on' : '') + '">' +
+          (feita ? '✔ Concluída' : 'Marcar concluída') + '</button>' +
+      '</div>';
+    cartao.querySelector(".marcar").addEventListener("click", () => alternar(l.ficheiro));
+    lista.appendChild(cartao);
+    verificarFicheiro(l.ficheiro, cartao);
+  });
+
+  const feitasVisiveis = LICOES.filter(l => feitas.includes(l.ficheiro)).length;
+  const pct = LICOES.length ? Math.round(feitasVisiveis / LICOES.length * 100) : 0;
+  document.getElementById("barra").style.width = pct + "%";
+  document.getElementById("progressoTxt").textContent =
+    feitasVisiveis + " de " + LICOES.length + " " +
+    (LICOES.length === 1 ? "lição concluída" : "lições concluídas") + " (" + pct + "%)";
+}
+
+/* Avisa se o nome do ficheiro estiver errado (só funciona quando o site está online) */
+function verificarFicheiro(ficheiro, cartao){
+  if(location.protocol === "file:") return;
+  fetch(ficheiro, {method:"HEAD"}).then(r => {
+    if(!r.ok){
+      cartao.classList.add("emfalta");
+      cartao.querySelector(".aviso").innerHTML =
+        ' <span class="badge erro">ficheiro não encontrado</span>';
+    }
+  }).catch(() => {});
+}
+
+document.getElementById("busca").addEventListener("input", e => {
+  filtroTexto = e.target.value; desenhar();
+});
+document.querySelectorAll(".chip").forEach(c => {
+  c.addEventListener("click", () => {
+    document.querySelectorAll(".chip").forEach(x => x.classList.remove("ativo"));
+    c.classList.add("ativo");
+    filtroNivel = c.dataset.nivel;
+    desenhar();
+  });
+});
+
+desenhar();
+</script>
+</body>
+</html>
