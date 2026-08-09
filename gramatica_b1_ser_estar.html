@@ -2,67 +2,210 @@
 <html lang="pt-PT">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2f6b4f">
+<meta name="description" content="Ficha de estudo autónomo de português europeu, nível B1: ser/estar, artigos, pronomes, ordem da frase e leitura.">
 <title>Gramática B1 — Ser/Estar, Artigos, Pronomes e Ordem da Frase</title>
 <style>
   :root{
     --verde:#2f6b4f; --verde-claro:#e4efe7; --vermelho:#b03a3a; --vermelho-claro:#fbeaea;
-    --azul:#c7d7e4; --azul-esc:#2b4a63; --areia:#f6f0e9; --texto:#22303a; --cinza:#8a969e;
-    --ok:#1e7a4b; --erro:#b03a3a; --quase:#b8860b;
+    --azul:#c7d7e4; --azul-esc:#2b4a63; --areia:#f6f0e9; --texto:#22303a; --cinza:#77838b;
+    --ok:#1e7a4b; --erro:#b03a3a; --quase:#9a6d05;
+    --borda:#e2ddd5;
+    --raio:14px;
+    --toque:44px;               /* alvo mínimo de toque */
+    --gap:clamp(14px,3vw,24px);
   }
   *{box-sizing:border-box}
-  body{margin:0;font-family:"Segoe UI",Helvetica,Arial,sans-serif;background:var(--areia);color:var(--texto);line-height:1.6}
-  .wrap{max-width:900px;margin:0 auto;padding:24px 18px 80px}
-  header.topo{background:linear-gradient(135deg,#2f6b4f,#3d8a66);color:#fff;border-radius:16px;padding:28px 26px;margin-bottom:18px}
-  header.topo h1{margin:0 0 6px;font-size:1.9rem;letter-spacing:.5px}
-  header.topo p{margin:0;opacity:.92;font-size:.98rem}
-  .nivel{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);padding:2px 10px;border-radius:20px;font-size:.8rem;margin-left:8px;vertical-align:middle}
-  nav.pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
-  nav.pills a{background:#fff;border:1px solid #ddd3c8;padding:7px 14px;border-radius:20px;text-decoration:none;color:var(--azul-esc);font-size:.88rem;font-weight:600}
-  nav.pills a:hover{background:var(--verde);color:#fff;border-color:var(--verde)}
-  section{background:#fff;border-radius:14px;padding:22px 24px;margin-bottom:22px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-  h2{color:var(--vermelho);border-bottom:3px solid var(--verde-claro);padding-bottom:8px;margin-top:0;font-size:1.45rem}
-  h3{color:var(--azul-esc);margin:22px 0 8px;font-size:1.1rem}
-  h4{margin:16px 0 6px;color:var(--verde);font-size:1rem}
-  table{width:100%;border-collapse:collapse;margin:10px 0 4px;font-size:.94rem}
-  th,td{border:1px solid #e2ddd5;padding:7px 10px;text-align:left;vertical-align:top}
-  th{background:var(--verde-claro);color:var(--azul-esc)}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--areia);color:var(--texto);
+    font-size:clamp(15.5px,1vw + 13px,17px);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  img,table{max-width:100%}
+
+  .wrap{
+    width:100%;max-width:920px;margin:0 auto;
+    padding:clamp(12px,3vw,24px) clamp(12px,4vw,20px) 90px;
+  }
+
+  /* ---------- cabeçalho ---------- */
+  header.topo{
+    background:linear-gradient(135deg,#2f6b4f,#3d8a66);color:#fff;
+    border-radius:var(--raio);padding:clamp(20px,5vw,30px) clamp(18px,5vw,28px);
+    margin-bottom:16px;
+  }
+  header.topo h1{margin:0 0 8px;font-size:clamp(1.35rem,4.5vw,2rem);line-height:1.25;letter-spacing:.3px}
+  header.topo p{margin:0 0 6px;opacity:.94;font-size:clamp(.9rem,2.6vw,1rem)}
+  header.topo p:last-child{margin-bottom:0}
+  .nivel{
+    display:inline-block;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.45);
+    padding:2px 11px;border-radius:20px;font-size:.75em;white-space:nowrap;vertical-align:middle;
+  }
+
+  /* ---------- navegação (deslizante no telemóvel) ---------- */
+  nav.pills{
+    display:flex;gap:8px;margin:0 0 18px;
+    overflow-x:auto;padding-bottom:4px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    scroll-snap-type:x proximity;
+  }
+  nav.pills::-webkit-scrollbar{display:none}
+  nav.pills a{
+    flex:0 0 auto;scroll-snap-align:start;
+    background:#fff;border:1px solid #ddd3c8;padding:9px 15px;border-radius:22px;
+    text-decoration:none;color:var(--azul-esc);font-size:.87rem;font-weight:600;
+    min-height:var(--toque);display:flex;align-items:center;
+  }
+  nav.pills a:hover,nav.pills a:focus-visible{background:var(--verde);color:#fff;border-color:var(--verde)}
+
+  /* ---------- secções ---------- */
+  section{
+    background:#fff;border-radius:var(--raio);
+    padding:clamp(16px,4vw,26px);margin-bottom:18px;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+    scroll-margin-top:12px;
+  }
+  h2{color:var(--vermelho);border-bottom:3px solid var(--verde-claro);padding-bottom:8px;margin:0 0 14px;font-size:clamp(1.2rem,3.6vw,1.5rem)}
+  h3{color:var(--azul-esc);margin:24px 0 8px;font-size:clamp(1.02rem,2.9vw,1.15rem)}
+  h4{margin:18px 0 6px;color:var(--verde);font-size:clamp(.97rem,2.6vw,1.05rem)}
+  p{margin:0 0 10px}
+  ul{margin:8px 0 8px;padding-left:20px}
+  li{margin:5px 0}
+
+  /* ---------- tabelas: deslizam na horizontal em ecrãs estreitos ---------- */
+  .tabela{
+    overflow-x:auto;-webkit-overflow-scrolling:touch;
+    margin:12px 0;border-radius:10px;border:1px solid var(--borda);
+  }
+  .tabela table{width:100%;border-collapse:collapse;font-size:.93em;min-width:min(100%,420px)}
+  .tabela th,.tabela td{border:1px solid var(--borda);padding:8px 11px;text-align:left;vertical-align:top}
+  .tabela tr>*:first-child{border-left:none}
+  .tabela tr>*:last-child{border-right:none}
+  .tabela th{background:var(--verde-claro);color:var(--azul-esc);font-weight:700;white-space:nowrap}
+  .tabela.contracoes table{min-width:520px}
+  .tabela.pronomes table{min-width:560px}
+  .desliza{font-size:.78rem;color:var(--cinza);font-style:italic;margin:-6px 0 12px}
+  @media (min-width:640px){.desliza{display:none}}
+
+  /* ---------- comparação em duas colunas (empilha no telemóvel) ---------- */
+  .duo{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
+  @media (min-width:700px){.duo{grid-template-columns:1fr 1fr}}
+  .duo>div{border:1px solid var(--borda);border-radius:10px;padding:14px 16px;background:#fdfdfb}
+  .duo h4{margin:0 0 8px}
+  .duo ul{margin:0;padding-left:18px;font-size:.95em}
+
+  /* ---------- caixas ---------- */
   .caixa{background:var(--azul);border-radius:10px;padding:14px 16px;margin:14px 0}
   .caixa.verde{background:var(--verde-claro)}
   .caixa.aviso{background:var(--vermelho-claro);border-left:5px solid var(--vermelho)}
-  .ex{background:#fafaf7;border-left:4px solid var(--verde);padding:10px 14px;margin:8px 0;border-radius:0 8px 8px 0}
+  .caixa ul{margin:8px 0 0}
+  .ex{background:#fafaf7;border-left:4px solid var(--verde);padding:10px 14px;margin:9px 0;border-radius:0 8px 8px 0;font-size:.97em}
   .ex b{color:var(--verde)}
-  ul{margin:6px 0 6px 18px;padding:0}
-  li{margin:4px 0}
-  .item{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:9px 0;border-bottom:1px dashed #ece7df}
+  .dica{color:var(--cinza);font-size:.86em;font-style:italic}
+
+  /* ---------- exercícios ---------- */
+  .item{
+    display:grid;
+    grid-template-columns:28px 1fr;
+    gap:6px 10px;
+    align-items:start;
+    padding:12px 0;border-bottom:1px dashed #ece7df;
+  }
   .item:last-child{border-bottom:none}
-  .num{background:var(--azul-esc);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex:0 0 26px}
-  .frase{flex:1 1 300px;min-width:220px}
-  input[type=text]{border:none;border-bottom:2px solid var(--azul-esc);background:#fff;font-size:1rem;font-family:inherit;padding:3px 6px;width:120px;color:var(--azul-esc)}
-  input.longo{width:100%;flex:1 1 100%;border:2px solid #dcd6cc;border-radius:8px;padding:8px 10px}
-  input[type=text]:focus{outline:none;border-color:var(--verde);background:#f4fbf6}
-  select{font-family:inherit;font-size:.95rem;padding:5px 8px;border-radius:8px;border:2px solid #dcd6cc;background:#fff}
-  .dica{color:var(--cinza);font-size:.85rem;font-style:italic}
-  .fb{font-size:.88rem;font-weight:600;flex:1 1 100%;margin-left:34px;min-height:0}
+  .num{
+    grid-row:1;grid-column:1;
+    background:var(--azul-esc);color:#fff;width:26px;height:26px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;margin-top:4px;
+  }
+  .frase{grid-column:2}
+  .item>input.longo{grid-column:2;width:100%}
+  .fb{grid-column:2;font-size:.88em;font-weight:600;min-height:0}
+  .fb:empty{display:none}
   .fb.ok{color:var(--ok)} .fb.erro{color:var(--erro)} .fb.quase{color:var(--quase)}
-  .barra{display:flex;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap}
-  button{background:var(--verde);color:#fff;border:none;padding:10px 18px;border-radius:22px;font-size:.92rem;font-weight:600;cursor:pointer;font-family:inherit}
+
+  input[type=text]{
+    border:none;border-bottom:2px solid var(--azul-esc);background:#fff;
+    font-size:16px;               /* evita o zoom automático no iOS */
+    font-family:inherit;padding:6px;width:8.5em;max-width:100%;
+    color:var(--azul-esc);border-radius:4px 4px 0 0;
+  }
+  input.longo{
+    display:block;width:100%;margin-top:8px;
+    border:2px solid #dcd6cc;border-radius:10px;padding:11px 12px;
+  }
+  input[type=text]:focus{outline:2px solid var(--verde);outline-offset:1px;background:#f4fbf6}
+  select{
+    font-family:inherit;font-size:16px;padding:8px 10px;border-radius:10px;
+    border:2px solid #dcd6cc;background:#fff;max-width:100%;min-height:var(--toque);
+  }
+  select:focus{outline:2px solid var(--verde);outline-offset:1px}
+
+  /* ---------- botões ---------- */
+  .barra{display:flex;gap:10px;align-items:center;margin-top:18px;flex-wrap:wrap}
+  button{
+    background:var(--verde);color:#fff;border:none;
+    padding:0 20px;min-height:var(--toque);border-radius:24px;
+    font-size:.92rem;font-weight:600;cursor:pointer;font-family:inherit;
+    flex:1 1 auto;
+  }
+  @media (min-width:520px){button{flex:0 1 auto}}
   button:hover{background:#255540}
+  button:active{transform:scale(.98)}
   button.sec{background:#fff;color:var(--azul-esc);border:2px solid #dcd6cc}
   button.sec:hover{background:#f0ece5}
-  .pontos{font-weight:700;color:var(--azul-esc)}
-  .leitura{background:#fffdf8;border:1px solid #eee6d8;border-radius:12px;padding:18px 20px;font-size:1.03rem}
-  .leitura p{margin:0 0 12px}
+
+  /* ---------- leitura ---------- */
+  .leitura{
+    background:#fffdf8;border:1px solid #eee6d8;border-radius:12px;
+    padding:clamp(14px,4vw,22px);
+    font-size:clamp(1rem,2.7vw,1.06rem);line-height:1.8;
+  }
+  .leitura h3{margin-top:0}
+  .leitura p{margin:0 0 14px}
+  .leitura p:last-child{margin-bottom:0}
   .leitura .g{background:#e4efe7;border-radius:4px;padding:0 3px}
-  .quiz label{display:block;padding:5px 0 5px 34px;cursor:pointer}
-  .glossario{font-size:.9rem;columns:2;column-gap:26px}
-  .glossario div{break-inside:avoid;margin-bottom:5px}
-  #placar{position:sticky;bottom:0;background:var(--azul-esc);color:#fff;border-radius:12px;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;font-weight:600;box-shadow:0 -2px 14px rgba(0,0,0,.15);flex-wrap:wrap;gap:8px}
-  #placar span{font-weight:400;font-size:.9rem;opacity:.85}
-  textarea{width:100%;min-height:110px;border:2px solid #dcd6cc;border-radius:10px;padding:10px;font-family:inherit;font-size:1rem}
-  details{margin-top:10px;background:#f7f4ee;border-radius:8px;padding:10px 14px}
-  summary{cursor:pointer;font-weight:600;color:var(--azul-esc)}
-  @media (max-width:600px){.glossario{columns:1}header.topo h1{font-size:1.45rem}}
+  .quiz label{
+    display:flex;gap:9px;align-items:flex-start;
+    padding:9px 4px;cursor:pointer;min-height:var(--toque);
+    border-radius:8px;
+  }
+  .quiz label:hover{background:#f7f4ee}
+  .quiz input[type=radio]{width:20px;height:20px;margin:2px 0 0;flex:0 0 auto;accent-color:var(--verde)}
+  .glossario{display:grid;grid-template-columns:1fr;gap:6px 26px;font-size:.93em}
+  @media (min-width:640px){.glossario{grid-template-columns:1fr 1fr}}
+
+  textarea{
+    width:100%;min-height:150px;border:2px solid #dcd6cc;border-radius:10px;
+    padding:12px;font-family:inherit;font-size:16px;line-height:1.6;resize:vertical;
+  }
+  textarea:focus{outline:2px solid var(--verde);outline-offset:1px}
+  details{margin-top:12px;background:#f7f4ee;border-radius:10px;padding:12px 15px}
+  summary{cursor:pointer;font-weight:600;color:var(--azul-esc);min-height:28px}
+
+  /* ---------- placar fixo ---------- */
+  #placar{
+    position:sticky;bottom:0;z-index:5;
+    background:var(--azul-esc);color:#fff;border-radius:12px;
+    padding:12px 18px calc(12px + env(safe-area-inset-bottom));
+    display:flex;justify-content:space-between;align-items:center;
+    font-weight:600;box-shadow:0 -2px 14px rgba(0,0,0,.18);
+    flex-wrap:wrap;gap:4px 12px;font-size:.92rem;
+  }
+  #placar span{font-weight:400;font-size:.85em;opacity:.88}
+  .pontos{font-weight:700}
+
+  /* ---------- preferências do utilizador ---------- */
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  @media print{
+    nav.pills,#placar,.barra{display:none}
+    body{background:#fff}
+    section{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid}
+  }
 </style>
 </head>
 <body>
@@ -70,8 +213,8 @@
 
 <header class="topo">
   <h1>Gramática Portuguesa em Ação <span class="nivel">Nível B1</span></h1>
-  <p>Ficha de estudo autónomo · <b>SER / ESTAR</b> · <b>Artigos</b> · <b>Pronomes pessoais</b> · <b>Ordem da frase</b> · Leitura</p>
-  <p style="margin-top:8px;font-size:.9rem">Trabalhe do princípio ao fim: leia a regra, observe os exemplos, faça os exercícios e verifique as respostas. Duração estimada: 45–60 minutos.</p>
+  <p>Ficha de estudo autónomo · <b>SER / ESTAR</b> · <b>Artigos</b> · <b>Pronomes</b> · <b>Ordem da frase</b> · Leitura</p>
+  <p style="font-size:.9em">Leia a regra, observe os exemplos, faça os exercícios e verifique as respostas. Duração: 45–60 minutos.</p>
 </header>
 
 <nav class="pills">
@@ -89,38 +232,47 @@
   <h3>1.1 SER ou ESTAR</h3>
   <p>Os dois verbos traduzem-se muitas vezes da mesma maneira noutras línguas, mas em português exprimem ideias diferentes: <b>SER</b> indica aquilo que é permanente ou definidor; <b>ESTAR</b> indica aquilo que é temporário ou circunstancial.</p>
 
-  <table>
-    <tr><th>Pessoa</th><th>SER (presente)</th><th>ESTAR (presente)</th></tr>
-    <tr><td>eu</td><td>sou</td><td>estou</td></tr>
-    <tr><td>tu</td><td>és</td><td>estás</td></tr>
-    <tr><td>ele / ela / você</td><td>é</td><td>está</td></tr>
-    <tr><td>nós</td><td>somos</td><td>estamos</td></tr>
-    <tr><td>eles / elas / vocês</td><td>são</td><td>estão</td></tr>
-  </table>
+  <div class="tabela">
+    <table>
+      <tr><th>Pessoa</th><th>SER</th><th>ESTAR</th></tr>
+      <tr><td>eu</td><td>sou</td><td>estou</td></tr>
+      <tr><td>tu</td><td>és</td><td>estás</td></tr>
+      <tr><td>ele / ela / você</td><td>é</td><td>está</td></tr>
+      <tr><td>nós</td><td>somos</td><td>estamos</td></tr>
+      <tr><td>eles / elas / vocês</td><td>são</td><td>estão</td></tr>
+    </table>
+  </div>
 
-  <table>
-    <tr><th>Usamos SER para…</th><th>Usamos ESTAR para…</th></tr>
-    <tr>
-      <td>identidade: <i>Eu sou o Miguel.</i><br>
-          nacionalidade e origem: <i>Somos de Portugal.</i><br>
-          profissão: <i>A Maria é professora.</i><br>
-          características permanentes: <i>Ele é alto e calmo.</i><br>
-          relações estáveis: <i>Eles são amigos há anos.</i><br>
-          horas e datas: <i>São três da tarde.</i><br>
-          material e posse: <i>A mesa é de madeira. É meu.</i></td>
-      <td>localização momentânea: <i>Estamos em casa agora.</i><br>
-          estados físicos e emocionais: <i>Estou cansado hoje.</i><br>
-          clima e temperatura: <i>Está frio lá fora.</i><br>
-          resultado de uma mudança: <i>A sopa está fria.</i><br>
-          ação em curso (estar a + infinitivo): <i>Estou a ler.</i><br>
-          <i>estar com</i> (fome, sede, pressa, medo)</td>
-    </tr>
-  </table>
+  <div class="duo">
+    <div>
+      <h4>Usamos SER para…</h4>
+      <ul>
+        <li>identidade: <i>Eu sou o Miguel.</i></li>
+        <li>origem: <i>Somos de Portugal.</i></li>
+        <li>profissão: <i>A Maria é professora.</i></li>
+        <li>características permanentes: <i>Ele é alto e calmo.</i></li>
+        <li>relações estáveis: <i>Eles são amigos há anos.</i></li>
+        <li>horas e datas: <i>São três da tarde.</i></li>
+        <li>material e posse: <i>A mesa é de madeira. É meu.</i></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Usamos ESTAR para…</h4>
+      <ul>
+        <li>localização momentânea: <i>Estamos em casa agora.</i></li>
+        <li>estados físicos e emocionais: <i>Estou cansado hoje.</i></li>
+        <li>clima: <i>Está frio lá fora.</i></li>
+        <li>resultado de uma mudança: <i>A sopa está fria.</i></li>
+        <li>ação em curso: <i>Estou a ler.</i></li>
+        <li><i>estar com</i> fome, sede, pressa, medo</li>
+      </ul>
+    </div>
+  </div>
 
   <div class="caixa aviso">
     <b>Cuidado B1 — o adjetivo muda de sentido:</b>
     <ul>
-      <li><i>Ele <b>é</b> aborrecido</i> = é uma pessoa maçadora. / <i>Ele <b>está</b> aborrecido</i> = neste momento está zangado ou entediado.</li>
+      <li><i>Ele <b>é</b> aborrecido</i> = pessoa maçadora. / <i>Ele <b>está</b> aborrecido</i> = neste momento está zangado ou entediado.</li>
       <li><i>A Ana <b>é</b> bonita</i> (característica). / <i>A Ana <b>está</b> bonita</i> (hoje, com aquele vestido).</li>
       <li><i>O João <b>é</b> nervoso</i> (temperamento). / <i>O João <b>está</b> nervoso</i> (por causa do exame).</li>
       <li><i>A fruta <b>é</b> verde</i> (cor). / <i>A fruta <b>está</b> verde</i> (ainda não está madura).</li>
@@ -132,48 +284,57 @@
   </div>
 
   <h3>1.2 Os artigos</h3>
-  <p>O artigo concorda sempre em <b>género</b> (masculino/feminino) e <b>número</b> (singular/plural) com o nome que acompanha.</p>
-  <table>
-    <tr><th></th><th>Masc. singular</th><th>Fem. singular</th><th>Masc. plural</th><th>Fem. plural</th></tr>
-    <tr><th>Definidos</th><td>o carro</td><td>a casa</td><td>os carros</td><td>as casas</td></tr>
-    <tr><th>Indefinidos</th><td>um carro</td><td>uma casa</td><td>uns carros</td><td>umas casas</td></tr>
-  </table>
+  <p>O artigo concorda sempre em <b>género</b> e <b>número</b> com o nome que acompanha.</p>
+  <div class="tabela">
+    <table>
+      <tr><th></th><th>Masc. sing.</th><th>Fem. sing.</th><th>Masc. pl.</th><th>Fem. pl.</th></tr>
+      <tr><th>Definidos</th><td>o carro</td><td>a casa</td><td>os carros</td><td>as casas</td></tr>
+      <tr><th>Indefinidos</th><td>um carro</td><td>uma casa</td><td>uns carros</td><td>umas casas</td></tr>
+    </table>
+  </div>
+  <p class="desliza">↔ Deslize a tabela para o lado para ver todas as colunas.</p>
   <ul>
-    <li><b>Definido</b> = algo conhecido, já mencionado ou único: <i>Ele encontrou <b>o</b> cão na rua</i> (aquele cão que já conhecemos).</li>
-    <li><b>Indefinido</b> = algo novo ou não específico: <i>Ele encontrou <b>um</b> cão na rua</i> (um cão qualquer).</li>
-    <li>Em português usa-se o artigo definido antes de nomes de pessoas: <i><b>A</b> Maria, <b>o</b> Pedro</i>. E antes de possessivos: <i><b>a</b> minha casa</i>.</li>
-    <li>Cuidado com palavras cujo género não é óbvio: <b>o</b> problema, <b>o</b> tema, <b>o</b> mapa, <b>a</b> viagem, <b>a</b> mensagem, <b>a</b> cidade, <b>o</b> leite, <b>a</b> ponte.</li>
+    <li><b>Definido</b> = algo conhecido ou já mencionado: <i>Ele encontrou <b>o</b> cão na rua.</i></li>
+    <li><b>Indefinido</b> = algo novo ou não específico: <i>Ele encontrou <b>um</b> cão na rua.</i></li>
+    <li>Em português usa-se o artigo antes de nomes de pessoas — <i><b>A</b> Maria, <b>o</b> Pedro</i> — e antes de possessivos — <i><b>a</b> minha casa</i>.</li>
+    <li>Género não óbvio: <b>o</b> problema, <b>o</b> tema, <b>o</b> mapa, <b>o</b> leite, <b>a</b> viagem, <b>a</b> mensagem, <b>a</b> cidade, <b>a</b> ponte.</li>
   </ul>
 
   <h4>Contrações (essencial no nível B1)</h4>
-  <table>
-    <tr><th>Preposição</th><th>+ o</th><th>+ a</th><th>+ os</th><th>+ as</th><th>+ um / uma</th></tr>
-    <tr><td>de</td><td>do</td><td>da</td><td>dos</td><td>das</td><td>dum / duma</td></tr>
-    <tr><td>em</td><td>no</td><td>na</td><td>nos</td><td>nas</td><td>num / numa</td></tr>
-    <tr><td>a</td><td>ao</td><td>à</td><td>aos</td><td>às</td><td>—</td></tr>
-    <tr><td>por</td><td>pelo</td><td>pela</td><td>pelos</td><td>pelas</td><td>—</td></tr>
-  </table>
-  <p class="dica">Ex.: Vou <b>ao</b> cinema. Estou <b>na</b> escola. Gosto <b>do</b> livro. Passei <b>pela</b> praça.</p>
+  <div class="tabela contracoes">
+    <table>
+      <tr><th>Prep.</th><th>+ o</th><th>+ a</th><th>+ os</th><th>+ as</th><th>+ um / uma</th></tr>
+      <tr><td>de</td><td>do</td><td>da</td><td>dos</td><td>das</td><td>dum / duma</td></tr>
+      <tr><td>em</td><td>no</td><td>na</td><td>nos</td><td>nas</td><td>num / numa</td></tr>
+      <tr><td>a</td><td>ao</td><td>à</td><td>aos</td><td>às</td><td>—</td></tr>
+      <tr><td>por</td><td>pelo</td><td>pela</td><td>pelos</td><td>pelas</td><td>—</td></tr>
+    </table>
+  </div>
+  <p class="desliza">↔ Deslize a tabela para o lado para ver todas as colunas.</p>
+  <p class="dica">Vou <b>ao</b> cinema. Estou <b>na</b> escola. Gosto <b>do</b> livro. Passei <b>pela</b> praça.</p>
 
   <h3>1.3 Pronomes pessoais</h3>
-  <table>
-    <tr><th>Sujeito</th><th>Complemento direto</th><th>Complemento indireto</th><th>Depois de preposição</th></tr>
-    <tr><td>eu</td><td>me</td><td>me</td><td>mim (comigo)</td></tr>
-    <tr><td>tu</td><td>te</td><td>te</td><td>ti (contigo)</td></tr>
-    <tr><td>ele / ela / você</td><td>o / a</td><td>lhe</td><td>ele / ela / si</td></tr>
-    <tr><td>nós</td><td>nos</td><td>nos</td><td>nós (connosco)</td></tr>
-    <tr><td>eles / elas / vocês</td><td>os / as</td><td>lhes</td><td>eles / elas</td></tr>
-  </table>
+  <div class="tabela pronomes">
+    <table>
+      <tr><th>Sujeito</th><th>Compl. direto</th><th>Compl. indireto</th><th>Após preposição</th></tr>
+      <tr><td>eu</td><td>me</td><td>me</td><td>mim (comigo)</td></tr>
+      <tr><td>tu</td><td>te</td><td>te</td><td>ti (contigo)</td></tr>
+      <tr><td>ele / ela / você</td><td>o / a</td><td>lhe</td><td>ele / ela / si</td></tr>
+      <tr><td>nós</td><td>nos</td><td>nos</td><td>nós (connosco)</td></tr>
+      <tr><td>eles / elas / vocês</td><td>os / as</td><td>lhes</td><td>eles / elas</td></tr>
+    </table>
+  </div>
+  <p class="desliza">↔ Deslize a tabela para o lado para ver todas as colunas.</p>
   <ul>
-    <li>Em português, o pronome sujeito é frequentemente <b>omitido</b>, porque a terminação do verbo já indica a pessoa: <i>(Eu) moro em Lisboa.</i> Usa-se sobretudo para dar ênfase ou desfazer ambiguidade.</li>
-    <li>Regra de ouro do B1: <b>o verbo tem de concordar com o pronome</b>. <i>Eu tenh<b>o</b>, tu tens, nós vam<b>os</b>, elas sã<b>o</b>.</i></li>
+    <li>O pronome sujeito é frequentemente <b>omitido</b>, porque a terminação do verbo já indica a pessoa: <i>(Eu) moro em Lisboa.</i></li>
+    <li>Regra de ouro do B1: <b>o verbo concorda com o pronome</b> — <i>Eu tenh<b>o</b>, tu tens, nós vam<b>os</b>, elas sã<b>o</b>.</i></li>
     <li>Colocação do pronome átono (PT-PT): normalmente <b>depois</b> do verbo, com hífen — <i>Vejo-<b>o</b> todos os dias. Deu-<b>me</b> um livro.</i></li>
-    <li>Mas vai <b>antes</b> do verbo com palavras negativas, advérbios, conjunções e pronomes interrogativos: <i><b>Não</b> o vejo. <b>Já</b> me disse. <b>Quando</b> te telefonou? Espero <b>que</b> te ajude.</i></li>
-    <li>Em Portugal, <b>tu</b> é informal; para tratamento formal usa-se <b>o senhor / a senhora</b> ou o nome da pessoa, com o verbo na 3.ª pessoa.</li>
+    <li>Mas vai <b>antes</b> do verbo com negativas, advérbios, conjunções e interrogativos: <i><b>Não</b> o vejo. <b>Já</b> me disse. <b>Quando</b> te telefonou? Espero <b>que</b> te ajude.</i></li>
+    <li>Em Portugal, <b>tu</b> é informal; no tratamento formal usa-se <b>o senhor / a senhora</b>, com o verbo na 3.ª pessoa.</li>
   </ul>
 
-  <h3>1.4 A ordem das palavras na frase</h3>
-  <p>A ordem básica é <b>Sujeito → Verbo → Complemento → Circunstâncias</b> (modo, lugar, tempo).</p>
+  <h3>1.4 A ordem das palavras</h3>
+  <p>A ordem básica é <b>Sujeito → Verbo → Complemento → Circunstâncias</b>.</p>
   <div class="ex"><b>Nós</b> (S) <b>somos</b> (V) <b>de Portugal</b> (compl.).</div>
   <div class="ex"><b>O Pedro</b> (S) <b>vai</b> (V) <b>ao cinema</b> (lugar) <b>com os amigos</b> (companhia).</div>
   <ul>
@@ -187,27 +348,27 @@
 <!-- ============ 2. EXEMPLOS ============ -->
 <section id="ex">
   <h2>2. Exemplos comentados</h2>
-  <p>Leia cada par com atenção e repare na diferença. Diga as frases em voz alta.</p>
+  <p>Leia cada par com atenção e diga as frases em voz alta.</p>
 
   <h3>SER vs. ESTAR</h3>
-  <div class="ex"><b>A Maria é professora de português.</b> → profissão, situação estável. <span class="dica">Comparar: <i>A Maria está de baixa esta semana.</i> (situação temporária)</span></div>
-  <div class="ex"><b>Eu estou feliz hoje.</b> → «hoje» marca um estado passageiro. <span class="dica">Comparar: <i>Eu sou uma pessoa feliz.</i> (carácter)</span></div>
+  <div class="ex"><b>A Maria é professora de português.</b> → profissão, situação estável. <span class="dica">Comparar: <i>A Maria está de baixa esta semana.</i></span></div>
+  <div class="ex"><b>Eu estou feliz hoje.</b> → «hoje» marca um estado passageiro. <span class="dica">Comparar: <i>Eu sou uma pessoa feliz.</i></span></div>
   <div class="ex"><b>Eles são amigos há muitos anos.</b> → relação duradoura. <span class="dica">Comparar: <i>Eles estão zangados desde ontem.</i></span></div>
   <div class="ex"><b>Está a chover e a rua está molhada.</b> → clima + resultado de uma mudança.</div>
 
   <h3>Artigos</h3>
-  <div class="ex"><b>A casa é muito bonita.</b> → «casa» é feminino, logo <i>a casa</i>. <span class="dica">O verbo <i>é</i> porque falamos de uma característica.</span></div>
-  <div class="ex"><b>Vou comprar um carro novo.</b> → carro ainda não identificado → indefinido. <span class="dica">Depois de o comprar: <i>Adoro <b>o</b> carro novo.</i></span></div>
-  <div class="ex"><b>Esta é a amiga da Ana.</b> → <i>de + a Ana = da Ana</i>; nomes próprios levam artigo em PT-PT.</div>
+  <div class="ex"><b>A casa é muito bonita.</b> → «casa» é feminino, logo <i>a casa</i>.</div>
+  <div class="ex"><b>Vou comprar um carro novo.</b> → carro ainda não identificado. <span class="dica">Depois de o comprar: <i>Adoro <b>o</b> carro novo.</i></span></div>
+  <div class="ex"><b>Esta é a amiga da Ana.</b> → <i>de + a Ana = da Ana</i>.</div>
 
   <h3>Pronomes</h3>
-  <div class="ex"><b>Onde estás (tu)?</b> → a terminação <i>-ás</i> já indica «tu»; o pronome é opcional.</div>
-  <div class="ex"><b>Nós vamos ao supermercado e depois telefonamos-lhe.</b> → <i>a + o = ao</i>; <i>lhe</i> = complemento indireto, colocado depois do verbo.</div>
+  <div class="ex"><b>Onde estás (tu)?</b> → a terminação <i>-ás</i> já indica «tu».</div>
+  <div class="ex"><b>Nós vamos ao supermercado e depois telefonamos-lhe.</b> → <i>a + o = ao</i>; <i>lhe</i> depois do verbo.</div>
   <div class="ex"><b>Não a vi ontem.</b> → com <i>não</i>, o pronome vem antes do verbo.</div>
 
   <h3>Ordem das palavras</h3>
   <div class="ex"><b>Ela gosta de estudar à noite.</b> → S + V + <i>de</i> + infinitivo + tempo.</div>
-  <div class="ex"><b>A Maria canta uma canção bonita.</b> → o adjetivo <i>bonita</i> segue o nome <i>canção</i>.</div>
+  <div class="ex"><b>A Maria canta uma canção bonita.</b> → o adjetivo segue o nome.</div>
 </section>
 
 <!-- ============ 3. PRÁTICA ============ -->
@@ -216,37 +377,37 @@
 
   <h3>Exercício A — SER ou ESTAR</h3>
   <p class="dica">Escreva a forma correta do verbo.</p>
-  <div class="item"><span class="num">1</span><span class="frase">Eu <input type="text" data-a="estou"> feliz hoje.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">2</span><span class="frase">Nós <input type="text" data-a="estamos"> em casa agora.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">3</span><span class="frase">Eles <input type="text" data-a="são"> amigos há muitos anos.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">4</span><span class="frase">A Maria <input type="text" data-a="é"> professora de português.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">5</span><span class="frase">Tu <input type="text" data-a="és"> um homem muito paciente.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">6</span><span class="frase">Hoje <input type="text" data-a="está"> muito frio na Guarda.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">7</span><span class="frase">Este relógio <input type="text" data-a="é"> de ouro e <input type="text" data-a="é"> do meu avô.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">8</span><span class="frase">Desculpa, não posso falar: <input type="text" data-a="estou"> a trabalhar.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">1</span><span class="frase">Eu <input type="text" data-a="estou" inputmode="text" autocapitalize="off" autocomplete="off"> feliz hoje.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">2</span><span class="frase">Nós <input type="text" data-a="estamos" autocapitalize="off" autocomplete="off"> em casa agora.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">3</span><span class="frase">Eles <input type="text" data-a="são" autocapitalize="off" autocomplete="off"> amigos há muitos anos.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">4</span><span class="frase">A Maria <input type="text" data-a="é" autocapitalize="off" autocomplete="off"> professora de português.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">5</span><span class="frase">Tu <input type="text" data-a="és" autocapitalize="off" autocomplete="off"> um homem muito paciente.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">6</span><span class="frase">Hoje <input type="text" data-a="está" autocapitalize="off" autocomplete="off"> muito frio na Guarda.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">7</span><span class="frase">Este relógio <input type="text" data-a="é" autocapitalize="off" autocomplete="off"> de ouro e <input type="text" data-a="é" autocapitalize="off" autocomplete="off"> do meu avô.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">8</span><span class="frase">Desculpa, não posso falar: <input type="text" data-a="estou" autocapitalize="off" autocomplete="off"> a trabalhar.</span><div class="fb"></div></div>
   <div class="barra"><button onclick="corrigir('pratica')">Verificar tudo</button><button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button><button class="sec" onclick="limpar('pratica')">Limpar</button></div>
 
   <h3>Exercício B — Artigos definidos</h3>
   <p class="dica">Complete com <i>o, a, os, as</i>.</p>
-  <div class="item"><span class="num">1</span><span class="frase"><input type="text" data-a="A"> casa é muito bonita.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">2</span><span class="frase">Vou comprar <input type="text" data-a="o"> carro novo de que te falei.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">3</span><span class="frase"><input type="text" data-a="As"> crianças estão no parque.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">4</span><span class="frase">Ele encontrou <input type="text" data-a="o"> cão na rua.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">5</span><span class="frase">Esta é <input type="text" data-a="a"> amiga da Ana.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">6</span><span class="frase"><input type="text" data-a="O"> problema é <input type="text" data-a="a"> viagem: dura oito horas.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">1</span><span class="frase"><input type="text" data-a="A" autocapitalize="off" autocomplete="off"> casa é muito bonita.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">2</span><span class="frase">Vou comprar <input type="text" data-a="o" autocapitalize="off" autocomplete="off"> carro novo de que te falei.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">3</span><span class="frase"><input type="text" data-a="As" autocapitalize="off" autocomplete="off"> crianças estão no parque.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">4</span><span class="frase">Ele encontrou <input type="text" data-a="o" autocapitalize="off" autocomplete="off"> cão na rua.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">5</span><span class="frase">Esta é <input type="text" data-a="a" autocapitalize="off" autocomplete="off"> amiga da Ana.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">6</span><span class="frase"><input type="text" data-a="O" autocapitalize="off" autocomplete="off"> problema é <input type="text" data-a="a" autocapitalize="off" autocomplete="off"> viagem: dura oito horas.</span><div class="fb"></div></div>
   <div class="barra"><button onclick="corrigir('pratica')">Verificar tudo</button><button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button></div>
 
-  <h3>Exercício C — Contrações (nível B1)</h3>
-  <p class="dica">Junte a preposição ao artigo: <i>de/em/a/por + o, a, os, as</i>.</p>
-  <div class="item"><span class="num">1</span><span class="frase">O Pedro vai <input type="text" data-a="ao"> cinema com os amigos. <span class="dica">(a + o)</span></span><div class="fb"></div></div>
-  <div class="item"><span class="num">2</span><span class="frase">As chaves estão <input type="text" data-a="na"> mesa da cozinha. <span class="dica">(em + a)</span></span><div class="fb"></div></div>
-  <div class="item"><span class="num">3</span><span class="frase">Gosto muito <input type="text" data-a="dos"> teus livros. <span class="dica">(de + os)</span></span><div class="fb"></div></div>
-  <div class="item"><span class="num">4</span><span class="frase">Chego sempre <input type="text" data-a="às"> oito da manhã. <span class="dica">(a + as)</span></span><div class="fb"></div></div>
-  <div class="item"><span class="num">5</span><span class="frase">Passámos <input type="text" data-a="pela"> praça do Rossio. <span class="dica">(por + a)</span></span><div class="fb"></div></div>
-  <div class="item"><span class="num">6</span><span class="frase">Ela mora <input type="text" data-a="num"> apartamento pequeno. <span class="dica">(em + um)</span></span><div class="fb"></div></div>
+  <h3>Exercício C — Contrações</h3>
+  <p class="dica">Junte a preposição ao artigo.</p>
+  <div class="item"><span class="num">1</span><span class="frase">O Pedro vai <input type="text" data-a="ao" autocapitalize="off" autocomplete="off"> cinema com os amigos. <span class="dica">(a + o)</span></span><div class="fb"></div></div>
+  <div class="item"><span class="num">2</span><span class="frase">As chaves estão <input type="text" data-a="na" autocapitalize="off" autocomplete="off"> mesa da cozinha. <span class="dica">(em + a)</span></span><div class="fb"></div></div>
+  <div class="item"><span class="num">3</span><span class="frase">Gosto muito <input type="text" data-a="dos" autocapitalize="off" autocomplete="off"> teus livros. <span class="dica">(de + os)</span></span><div class="fb"></div></div>
+  <div class="item"><span class="num">4</span><span class="frase">Chego sempre <input type="text" data-a="às" autocapitalize="off" autocomplete="off"> oito da manhã. <span class="dica">(a + as)</span></span><div class="fb"></div></div>
+  <div class="item"><span class="num">5</span><span class="frase">Passámos <input type="text" data-a="pela" autocapitalize="off" autocomplete="off"> praça do Rossio. <span class="dica">(por + a)</span></span><div class="fb"></div></div>
+  <div class="item"><span class="num">6</span><span class="frase">Ela mora <input type="text" data-a="num" autocapitalize="off" autocomplete="off"> apartamento pequeno. <span class="dica">(em + um)</span></span><div class="fb"></div></div>
   <div class="barra"><button onclick="corrigir('pratica')">Verificar tudo</button><button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button></div>
 
-  <h3>Exercício D — Pronomes pessoais sujeito</h3>
+  <h3>Exercício D — Pronomes pessoais</h3>
   <p class="dica">Escolha o pronome que concorda com o verbo.</p>
   <div class="item"><span class="num">1</span><span class="frase">
     <select data-a="Eu"><option value="">—</option><option>Eu</option><option>Tu</option></select> moro em Lisboa.</span><div class="fb"></div></div>
@@ -259,31 +420,31 @@
   <div class="item"><span class="num">5</span><span class="frase">
     <select data-a="Eu"><option value="">—</option><option>Eu</option><option>Ela</option></select> tenho um carro novo.</span><div class="fb"></div></div>
 
-  <h4>D2 — Pronomes de complemento (B1)</h4>
+  <h4>D2 — Pronomes de complemento</h4>
   <p class="dica">Substitua a parte sublinhada pelo pronome certo.</p>
-  <div class="item"><span class="num">6</span><span class="frase">Vi <u>a Maria</u> ontem. → Vi-<input type="text" data-a="a"> ontem.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">7</span><span class="frase">Dei um livro <u>ao João</u>. → Dei-<input type="text" data-a="lhe"> um livro.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">8</span><span class="frase">Não conheço <u>os teus primos</u>. → Não <input type="text" data-a="os"> conheço.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">6</span><span class="frase">Vi <u>a Maria</u> ontem. → Vi-<input type="text" data-a="a" autocapitalize="off" autocomplete="off"> ontem.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">7</span><span class="frase">Dei um livro <u>ao João</u>. → Dei-<input type="text" data-a="lhe" autocapitalize="off" autocomplete="off"> um livro.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">8</span><span class="frase">Não conheço <u>os teus primos</u>. → Não <input type="text" data-a="os" autocapitalize="off" autocomplete="off"> conheço.</span><div class="fb"></div></div>
   <div class="barra"><button onclick="corrigir('pratica')">Verificar tudo</button><button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button></div>
 
   <h3>Exercício E — Ordenar as frases</h3>
   <p class="dica">Escreva a frase completa, com maiúscula e ponto final.</p>
-  <div class="item"><span class="num">1</span><span class="frase">Nós / de / Portugal / somos</span><input class="longo" type="text" data-a="Nós somos de Portugal."><div class="fb"></div></div>
-  <div class="item"><span class="num">2</span><span class="frase">Ela / estudar / gosta / à noite / de</span><input class="longo" type="text" data-a="Ela gosta de estudar à noite.|À noite, ela gosta de estudar."><div class="fb"></div></div>
-  <div class="item"><span class="num">3</span><span class="frase">O João / futebol / joga / bem</span><input class="longo" type="text" data-a="O João joga bem futebol.|O João joga futebol bem."><div class="fb"></div></div>
-  <div class="item"><span class="num">4</span><span class="frase">A Maria / canta / uma canção / bonita</span><input class="longo" type="text" data-a="A Maria canta uma canção bonita."><div class="fb"></div></div>
-  <div class="item"><span class="num">5</span><span class="frase">O Pedro / com os amigos / vai / ao cinema</span><input class="longo" type="text" data-a="O Pedro vai ao cinema com os amigos.|O Pedro vai com os amigos ao cinema."><div class="fb"></div></div>
-  <div class="item"><span class="num">6</span><span class="frase">nunca / me / eles / telefonam / de manhã</span><input class="longo" type="text" data-a="Eles nunca me telefonam de manhã.|De manhã, eles nunca me telefonam."><div class="fb"></div></div>
+  <div class="item"><span class="num">1</span><span class="frase">Nós / de / Portugal / somos</span><input class="longo" type="text" data-a="Nós somos de Portugal." autocomplete="off"><div class="fb"></div></div>
+  <div class="item"><span class="num">2</span><span class="frase">Ela / estudar / gosta / à noite / de</span><input class="longo" type="text" data-a="Ela gosta de estudar à noite.|À noite, ela gosta de estudar." autocomplete="off"><div class="fb"></div></div>
+  <div class="item"><span class="num">3</span><span class="frase">O João / futebol / joga / bem</span><input class="longo" type="text" data-a="O João joga bem futebol.|O João joga futebol bem." autocomplete="off"><div class="fb"></div></div>
+  <div class="item"><span class="num">4</span><span class="frase">A Maria / canta / uma canção / bonita</span><input class="longo" type="text" data-a="A Maria canta uma canção bonita." autocomplete="off"><div class="fb"></div></div>
+  <div class="item"><span class="num">5</span><span class="frase">O Pedro / com os amigos / vai / ao cinema</span><input class="longo" type="text" data-a="O Pedro vai ao cinema com os amigos.|O Pedro vai com os amigos ao cinema." autocomplete="off"><div class="fb"></div></div>
+  <div class="item"><span class="num">6</span><span class="frase">nunca / me / eles / telefonam / de manhã</span><input class="longo" type="text" data-a="Eles nunca me telefonam de manhã.|De manhã, eles nunca me telefonam." autocomplete="off"><div class="fb"></div></div>
   <div class="barra"><button onclick="corrigir('pratica')">Verificar tudo</button><button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button><button class="sec" onclick="limpar('pratica')">Limpar</button></div>
 </section>
 
 <!-- ============ 4. LEITURA ============ -->
 <section id="leitura">
   <h2>4. Prática de leitura</h2>
-  <p class="dica">Leia o texto duas vezes: a primeira para entender a história, a segunda para reparar nos verbos <i>ser/estar</i>, nos artigos e nos pronomes destacados.</p>
+  <p class="dica">Leia o texto duas vezes: a primeira para entender a história, a segunda para reparar nas formas destacadas.</p>
 
   <div class="leitura">
-    <h3 style="margin-top:0">Uma manhã na Baixa</h3>
+    <h3>Uma manhã na Baixa</h3>
     <p>A Teresa <span class="g">é</span> de Coimbra, mas vive <span class="g">em</span> Lisboa há três anos. <span class="g">É</span> arquiteta e trabalha <span class="g">num</span> escritório pequeno, mesmo ao lado do Cais do Sodré. Todas as manhãs apanha o comboio das sete e meia e, quando chega à Baixa, a cidade ainda <span class="g">está</span> meio adormecida.</p>
 
     <p>Naquela quinta-feira, porém, <span class="g">estava</span> tudo diferente. Havia uma greve dos transportes e as ruas <span class="g">estavam</span> cheias de gente a pé. «Hoje <span class="g">estou</span> atrasada», pensou ela, enquanto subia a Rua Augusta. Um senhor de bicicleta parou ao lado dela e perguntou-<span class="g">lhe</span>: «Desculpe, sabe onde <span class="g">é</span> a Praça da Figueira?» A Teresa sorriu — a praça <span class="g">estava</span> logo ali, a duzentos metros — e explicou-<span class="g">lhe</span> o caminho.</p>
@@ -298,52 +459,51 @@
   <h3>4.1 Compreensão do texto</h3>
   <div id="quiz" class="quiz">
     <div class="item"><span class="num">1</span><span class="frase"><b>De onde é a Teresa e onde vive?</b>
-      <label><input type="radio" name="q1" value="a"> a) É de Lisboa e vive em Coimbra.</label>
-      <label><input type="radio" name="q1" value="b" data-ok="1"> b) É de Coimbra e vive em Lisboa há três anos.</label>
-      <label><input type="radio" name="q1" value="c"> c) É de Lisboa e trabalha em Coimbra.</label></span><div class="fb"></div></div>
+      <label><input type="radio" name="q1" value="a"> <span>É de Lisboa e vive em Coimbra.</span></label>
+      <label><input type="radio" name="q1" value="b" data-ok="1"> <span>É de Coimbra e vive em Lisboa há três anos.</span></label>
+      <label><input type="radio" name="q1" value="c"> <span>É de Lisboa e trabalha em Coimbra.</span></label></span><div class="fb"></div></div>
 
     <div class="item"><span class="num">2</span><span class="frase"><b>Porque é que as ruas estavam cheias de gente a pé?</b>
-      <label><input type="radio" name="q2" value="a"> a) Porque havia uma festa na Baixa.</label>
-      <label><input type="radio" name="q2" value="b"> b) Porque estava muito bom tempo.</label>
-      <label><input type="radio" name="q2" value="c" data-ok="1"> c) Porque havia uma greve dos transportes.</label></span><div class="fb"></div></div>
+      <label><input type="radio" name="q2" value="a"> <span>Porque havia uma festa na Baixa.</span></label>
+      <label><input type="radio" name="q2" value="b"> <span>Porque estava muito bom tempo.</span></label>
+      <label><input type="radio" name="q2" value="c" data-ok="1"> <span>Porque havia uma greve dos transportes.</span></label></span><div class="fb"></div></div>
 
     <div class="item"><span class="num">3</span><span class="frase"><b>O que queria o senhor de bicicleta?</b>
-      <label><input type="radio" name="q3" value="a" data-ok="1"> a) Saber onde ficava a Praça da Figueira.</label>
-      <label><input type="radio" name="q3" value="b"> b) Vender-lhe uma bicicleta.</label>
-      <label><input type="radio" name="q3" value="c"> c) Pedir-lhe boleia até ao escritório.</label></span><div class="fb"></div></div>
+      <label><input type="radio" name="q3" value="a" data-ok="1"> <span>Saber onde ficava a Praça da Figueira.</span></label>
+      <label><input type="radio" name="q3" value="b"> <span>Vender-lhe uma bicicleta.</span></label>
+      <label><input type="radio" name="q3" value="c"> <span>Pedir-lhe boleia até ao escritório.</span></label></span><div class="fb"></div></div>
 
     <div class="item"><span class="num">4</span><span class="frase"><b>Porque é que o cliente parecia sério?</b>
-      <label><input type="radio" name="q4" value="a"> a) Porque não gostou do projeto.</label>
-      <label><input type="radio" name="q4" value="b" data-ok="1"> b) Porque estava cansado da viagem.</label>
-      <label><input type="radio" name="q4" value="c"> c) Porque estava zangado com o Rui.</label></span><div class="fb"></div></div>
+      <label><input type="radio" name="q4" value="a"> <span>Porque não gostou do projeto.</span></label>
+      <label><input type="radio" name="q4" value="b" data-ok="1"> <span>Porque estava cansado da viagem.</span></label>
+      <label><input type="radio" name="q4" value="c"> <span>Porque estava zangado com o Rui.</span></label></span><div class="fb"></div></div>
 
     <div class="item"><span class="num">5</span><span class="frase"><b>Qual é a função da nova biblioteca?</b>
-      <label><input type="radio" name="q5" value="a"> a) Servir de escritório à equipa da Teresa.</label>
-      <label><input type="radio" name="q5" value="b"> b) Substituir uma biblioteca antiga do Cais do Sodré.</label>
-      <label><input type="radio" name="q5" value="c" data-ok="1"> c) Dar às crianças do bairro um sítio para estudar.</label></span><div class="fb"></div></div>
+      <label><input type="radio" name="q5" value="a"> <span>Servir de escritório à equipa da Teresa.</span></label>
+      <label><input type="radio" name="q5" value="b"> <span>Substituir uma biblioteca antiga do Cais do Sodré.</span></label>
+      <label><input type="radio" name="q5" value="c" data-ok="1"> <span>Dar às crianças do bairro um sítio para estudar.</span></label></span><div class="fb"></div></div>
 
     <div class="item"><span class="num">6</span><span class="frase"><b>Como se sentia a Teresa no fim do dia?</b>
-      <label><input type="radio" name="q6" value="a"> a) Descansada e indiferente.</label>
-      <label><input type="radio" name="q6" value="b" data-ok="1"> b) Muito cansada, mas satisfeita.</label>
-      <label><input type="radio" name="q6" value="c"> c) Preocupada com a mãe.</label></span><div class="fb"></div></div>
+      <label><input type="radio" name="q6" value="a"> <span>Descansada e indiferente.</span></label>
+      <label><input type="radio" name="q6" value="b" data-ok="1"> <span>Muito cansada, mas satisfeita.</span></label>
+      <label><input type="radio" name="q6" value="c"> <span>Preocupada com a mãe.</span></label></span><div class="fb"></div></div>
   </div>
   <div class="barra"><button onclick="corrigirQuiz()">Verificar compreensão</button></div>
 
   <h3>4.2 Caça à gramática</h3>
-  <p class="dica">Responda com base no texto.</p>
   <div class="item"><span class="num">1</span><span class="frase">Em «A Teresa <b>é</b> arquiteta», usamos SER porque se trata de uma
     <select data-a="profissão"><option value="">—</option><option>profissão</option><option>emoção</option><option>localização</option></select>.</span><div class="fb"></div></div>
   <div class="item"><span class="num">2</span><span class="frase">Em «a cidade <b>está</b> meio adormecida», usamos ESTAR porque é um
     <select data-a="estado temporário"><option value="">—</option><option>estado temporário</option><option>traço permanente</option><option>material</option></select>.</span><div class="fb"></div></div>
-  <div class="item"><span class="num">3</span><span class="frase">Escreva a contração que aparece em «trabalha ___ escritório pequeno»: <input type="text" data-a="num"></span><div class="fb"></div></div>
-  <div class="item"><span class="num">4</span><span class="frase">Em «perguntou-lhe», o pronome <i>lhe</i> substitui <input type="text" data-a="ao senhor|o senhor|ao senhor de bicicleta|o senhor de bicicleta|ao homem da bicicleta"> .</span><div class="fb"></div></div>
-  <div class="item"><span class="num">5</span><span class="frase">Em «Não <b>te</b> preocupes», o pronome vem antes do verbo por causa da palavra <input type="text" data-a="não"> .</span><div class="fb"></div></div>
-  <div class="item"><span class="num">6</span><span class="frase">Passe para o presente: «já <b>eram</b> sete da tarde» → já <input type="text" data-a="são"> sete da tarde.</span><div class="fb"></div></div>
+  <div class="item"><span class="num">3</span><span class="frase">Escreva a contração de «trabalha ___ escritório pequeno»: <input type="text" data-a="num" autocapitalize="off" autocomplete="off"></span><div class="fb"></div></div>
+  <div class="item"><span class="num">4</span><span class="frase">Em «perguntou-lhe», o pronome <i>lhe</i> substitui <input type="text" data-a="ao senhor|o senhor|ao senhor de bicicleta|o senhor de bicicleta|ao homem da bicicleta" autocapitalize="off" autocomplete="off"></span><div class="fb"></div></div>
+  <div class="item"><span class="num">5</span><span class="frase">Em «Não <b>te</b> preocupes», o pronome vem antes do verbo por causa da palavra <input type="text" data-a="não" autocapitalize="off" autocomplete="off"></span><div class="fb"></div></div>
+  <div class="item"><span class="num">6</span><span class="frase">Passe para o presente: «já <b>eram</b> sete da tarde» → já <input type="text" data-a="são" autocapitalize="off" autocomplete="off"> sete da tarde.</span><div class="fb"></div></div>
   <div class="barra"><button onclick="corrigir('leitura')">Verificar</button><button class="sec" onclick="mostrar('leitura')">Mostrar soluções</button></div>
 
   <h3>4.3 Vocabulário do texto</h3>
   <div class="glossario">
-    <div><b>a greve</b> — paragem do trabalho como forma de protesto</div>
+    <div><b>a greve</b> — paragem do trabalho como protesto</div>
     <div><b>adormecida</b> — ainda a dormir, sem movimento</div>
     <div><b>atrasada</b> — que chega depois da hora</div>
     <div><b>o fato</b> — (PT-PT) casaco e calças formais</div>
@@ -358,7 +518,7 @@
 
 <!-- ============ 5. ESCRITA ============ -->
 <section id="escrita">
-  <h2>5. Desafio de escrita (opcional)</h2>
+  <h2>5. Desafio de escrita</h2>
   <p>Escreva 80–120 palavras sobre <b>um dia em que tudo correu diferente do previsto</b>. Use obrigatoriamente:</p>
   <ul>
     <li>três formas de <b>SER</b> e três de <b>ESTAR</b>;</li>
@@ -371,7 +531,7 @@
     <summary>Ver um texto-modelo</summary>
     <p>No sábado passado, <b>estava</b> a preparar o jantar quando a luz se foi abaixo. A cozinha ficou às escuras e eu não <b>estava</b> nada calmo. Telefonei ao meu vizinho, que <b>é</b> eletricista, e ele disse-<b>me</b> que o problema <b>era</b> do prédio inteiro. Descemos <b>ao</b> hall, falámos com os outros moradores e ficámos à conversa quase uma hora. No fim, a luz voltou e o jantar <b>estava</b> frio, mas <b>foi</b> uma noite divertida: agora conheço as pessoas <b>do</b> meu prédio. Às vezes, os dias que correm mal <b>são</b> os melhores.</p>
   </details>
-  <p class="dica">Sugestão: leia o seu texto em voz alta e sublinhe cada <i>ser</i> e <i>estar</i>. Pergunte-se sempre: «isto é permanente ou temporário?»</p>
+  <p class="dica">Leia o seu texto em voz alta e sublinhe cada <i>ser</i> e <i>estar</i>. Pergunte-se: «isto é permanente ou temporário?»</p>
 </section>
 
 <div id="placar">
@@ -407,17 +567,12 @@ function avaliar(campo){
   const esperadas = campo.dataset.a.split("|");
   const dada = campo.value;
   if(!limparTexto(dada)) return "vazio";
-  for(const e of esperadas){
-    if(limparTexto(dada) === limparTexto(e)) return "ok";
-  }
-  for(const e of esperadas){
-    if(semAcentos(dada) === semAcentos(e)) return "quase";
-  }
+  for(const e of esperadas){ if(limparTexto(dada) === limparTexto(e)) return "ok"; }
+  for(const e of esperadas){ if(semAcentos(dada) === semAcentos(e)) return "quase"; }
   return "erro";
 }
 
 function corrigir(secId){
-  const sec = document.getElementById(secId);
   acertos = 0; total = 0;
   document.querySelectorAll("[data-a]").forEach(c => {
     const item = c.closest(".item");
@@ -435,7 +590,6 @@ function corrigir(secId){
       else { fb.className="fb erro"; fb.textContent = "✘ Reveja. Resposta: «" + c.dataset.a.split("|")[0] + "»"; }
     }
   });
-  // somar quiz de compreensão
   document.querySelectorAll("#quiz .item").forEach(it => {
     const marcado = it.querySelector("input[type=radio]:checked");
     if(marcado){ total++; if(marcado.dataset.ok) acertos++; }
@@ -478,7 +632,9 @@ function limpar(secId){
 }
 
 document.querySelectorAll("[data-a]").forEach(c => {
-  c.addEventListener("keydown", e => { if(e.key === "Enter"){ e.preventDefault(); corrigir(c.closest("section").id); }});
+  c.addEventListener("keydown", e => {
+    if(e.key === "Enter"){ e.preventDefault(); corrigir(c.closest("section").id); }
+  });
 });
 atualizarPlacar();
 </script>
