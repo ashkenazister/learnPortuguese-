@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2f6b4f">
+<meta name="description" content="Ficha de estudo autónomo de português europeu (A2): artigos definidos e indefinidos, contrações com de, em, a e por.">
+<title>Artigos e Contrações — Português Europeu A2</title>
+<style>
+  :root{
+    --verde:#2f6b4f; --verde-claro:#e4efe7; --vermelho:#b03a3a; --vermelho-claro:#fbeaea;
+    --azul:#c7d7e4; --azul-esc:#2b4a63; --areia:#f6f0e9; --texto:#22303a; --cinza:#77838b;
+    --ok:#1e7a4b; --erro:#b03a3a; --quase:#9a6d05;
+    --borda:#e2ddd5; --raio:14px; --toque:44px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--areia);color:var(--texto);
+    font-size:clamp(15.5px,1vw + 13px,17px);line-height:1.65;overflow-x:hidden;
+  }
+  img,table{max-width:100%}
+  .wrap{width:100%;max-width:920px;margin:0 auto;padding:clamp(12px,3vw,24px) clamp(12px,4vw,20px) 90px}
+
+  header.topo{
+    background:linear-gradient(135deg,#2f6b4f,#3d8a66);color:#fff;
+    border-radius:var(--raio);padding:clamp(20px,5vw,30px) clamp(18px,5vw,28px);margin-bottom:16px;
+  }
+  header.topo h1{margin:0 0 8px;font-size:clamp(1.35rem,4.5vw,2rem);line-height:1.25;letter-spacing:.3px}
+  header.topo p{margin:0 0 6px;opacity:.94;font-size:clamp(.9rem,2.6vw,1rem)}
+  header.topo p:last-child{margin-bottom:0}
+  .nivel{display:inline-block;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.45);
+    padding:2px 11px;border-radius:20px;font-size:.75em;white-space:nowrap;vertical-align:middle}
+
+  nav.pills{display:flex;gap:8px;margin:0 0 18px;overflow-x:auto;padding-bottom:4px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+  nav.pills::-webkit-scrollbar{display:none}
+  nav.pills a{flex:0 0 auto;scroll-snap-align:start;background:#fff;border:1px solid #ddd3c8;
+    padding:9px 15px;border-radius:22px;text-decoration:none;color:var(--azul-esc);
+    font-size:.87rem;font-weight:600;min-height:var(--toque);display:flex;align-items:center}
+  nav.pills a:hover,nav.pills a:focus-visible{background:var(--verde);color:#fff;border-color:var(--verde)}
+
+  section{background:#fff;border-radius:var(--raio);padding:clamp(16px,4vw,26px);
+    margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.05);scroll-margin-top:12px}
+  h2{color:var(--vermelho);border-bottom:3px solid var(--verde-claro);padding-bottom:8px;
+    margin:0 0 14px;font-size:clamp(1.2rem,3.6vw,1.5rem)}
+  h3{color:var(--azul-esc);margin:24px 0 8px;font-size:clamp(1.02rem,2.9vw,1.15rem)}
+  h4{margin:18px 0 6px;color:var(--verde);font-size:clamp(.97rem,2.6vw,1.05rem)}
+  p{margin:0 0 10px}
+  ul{margin:8px 0;padding-left:20px}
+  li{margin:5px 0}
+
+  .tabela{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;
+    border-radius:10px;border:1px solid var(--borda)}
+  .tabela table{width:100%;border-collapse:collapse;font-size:.93em;min-width:min(100%,420px)}
+  .tabela th,.tabela td{border:1px solid var(--borda);padding:8px 11px;text-align:left;vertical-align:top}
+  .tabela tr>*:first-child{border-left:none}
+  .tabela tr>*:last-child{border-right:none}
+  .tabela th{background:var(--verde-claro);color:var(--azul-esc);font-weight:700;white-space:nowrap}
+  .tabela.larga table{min-width:520px}
+  .desliza{font-size:.78rem;color:var(--cinza);font-style:italic;margin:-6px 0 12px}
+  @media (min-width:640px){.desliza{display:none}}
+
+  .duo{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
+  @media (min-width:700px){.duo{grid-template-columns:1fr 1fr}}
+  .duo>div{border:1px solid var(--borda);border-radius:10px;padding:14px 16px;background:#fdfdfb}
+  .duo h4{margin:0 0 8px}
+  .duo ul{margin:0;padding-left:18px;font-size:.95em}
+
+  .caixa{background:var(--azul);border-radius:10px;padding:14px 16px;margin:14px 0}
+  .caixa.verde{background:var(--verde-claro)}
+  .caixa.aviso{background:var(--vermelho-claro);border-left:5px solid var(--vermelho)}
+  .caixa ul{margin:8px 0 0}
+  .ex{background:#fafaf7;border-left:4px solid var(--verde);padding:10px 14px;margin:9px 0;
+    border-radius:0 8px 8px 0;font-size:.97em}
+  .ex b{color:var(--verde)}
+  .dica{color:var(--cinza);font-size:.86em;font-style:italic}
+
+  .item{display:grid;grid-template-columns:28px 1fr;gap:6px 10px;align-items:start;
+    padding:12px 0;border-bottom:1px dashed #ece7df}
+  .item:last-child{border-bottom:none}
+  .num{grid-row:1;grid-column:1;background:var(--azul-esc);color:#fff;width:26px;height:26px;
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:.78rem;font-weight:700;margin-top:4px}
+  .frase{grid-column:2}
+  .item>input.longo{grid-column:2;width:100%}
+  .fb{grid-column:2;font-size:.88em;font-weight:600;min-height:0}
+  .fb:empty{display:none}
+  .fb.ok{color:var(--ok)} .fb.erro{color:var(--erro)} .fb.quase{color:var(--quase)}
+
+  input[type=text]{border:none;border-bottom:2px solid var(--azul-esc);background:#fff;
+    font-size:16px;font-family:inherit;padding:6px;width:8.5em;max-width:100%;
+    color:var(--azul-esc);border-radius:4px 4px 0 0}
+  input.longo{display:block;width:100%;margin-top:8px;border:2px solid #dcd6cc;
+    border-radius:10px;padding:11px 12px}
+  input[type=text]:focus{outline:2px solid var(--verde);outline-offset:1px;background:#f4fbf6}
+  select{font-family:inherit;font-size:16px;padding:8px 10px;border-radius:10px;
+    border:2px solid #dcd6cc;background:#fff;max-width:100%;min-height:var(--toque)}
+  select:focus{outline:2px solid var(--verde);outline-offset:1px}
+
+  .barra{display:flex;gap:10px;align-items:center;margin-top:18px;flex-wrap:wrap}
+  button{background:var(--verde);color:#fff;border:none;padding:0 20px;min-height:var(--toque);
+    border-radius:24px;font-size:.92rem;font-weight:600;cursor:pointer;font-family:inherit;flex:1 1 auto}
+  @media (min-width:520px){button{flex:0 1 auto}}
+  button:hover{background:#255540}
+  button:active{transform:scale(.98)}
+  button.sec{background:#fff;color:var(--azul-esc);border:2px solid #dcd6cc}
+  button.sec:hover{background:#f0ece5}
+
+  .leitura{background:#fffdf8;border:1px solid #eee6d8;border-radius:12px;
+    padding:clamp(14px,4vw,22px);font-size:clamp(1rem,2.7vw,1.06rem);line-height:1.8}
+  .leitura h3{margin-top:0}
+  .leitura p{margin:0 0 14px}
+  .leitura p:last-child{margin-bottom:0}
+  .leitura .g{background:#e4efe7;border-radius:4px;padding:0 3px}
+  .quiz label{display:flex;gap:9px;align-items:flex-start;padding:9px 4px;cursor:pointer;
+    min-height:var(--toque);border-radius:8px}
+  .quiz label:hover{background:#f7f4ee}
+  .quiz input[type=radio]{width:20px;height:20px;margin:2px 0 0;flex:0 0 auto;accent-color:var(--verde)}
+  .glossario{display:grid;grid-template-columns:1fr;gap:6px 26px;font-size:.93em}
+  @media (min-width:640px){.glossario{grid-template-columns:1fr 1fr}}
+
+  textarea{width:100%;min-height:150px;border:2px solid #dcd6cc;border-radius:10px;padding:12px;
+    font-family:inherit;font-size:16px;line-height:1.6;resize:vertical}
+  textarea:focus{outline:2px solid var(--verde);outline-offset:1px}
+  details{margin-top:12px;background:#f7f4ee;border-radius:10px;padding:12px 15px}
+  summary{cursor:pointer;font-weight:600;color:var(--azul-esc);min-height:28px}
+
+  #placar{position:sticky;bottom:0;z-index:5;background:var(--azul-esc);color:#fff;
+    border-radius:12px;padding:12px 18px calc(12px + env(safe-area-inset-bottom));
+    display:flex;justify-content:space-between;align-items:center;font-weight:600;
+    box-shadow:0 -2px 14px rgba(0,0,0,.18);flex-wrap:wrap;gap:4px 12px;font-size:.92rem}
+  #placar span{font-weight:400;font-size:.85em;opacity:.88}
+  .pontos{font-weight:700}
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  @media print{
+    nav.pills,#placar,.barra{display:none}
+    body{background:#fff}
+    section{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="topo">
+  <h1>Artigos e Contrações <span class="nivel">Nível A2</span></h1>
+  <p>Ficha de estudo autónomo · o, a, os, as · um, uma, uns, umas · do, na, ao, pelo</p>
+  <p style="font-size:.9em">Leia a regra, observe os exemplos, faça os exercícios e verifique as respostas. Duração: 45 a 60 minutos.</p>
+</header>
+
+<nav class="pills">
+  <a href="#g1">1. Gramática</a>
+  <a href="#ex">2. Exemplos</a>
+  <a href="#pratica">3. Prática</a>
+  <a href="#leitura">4. Leitura</a>
+  <a href="#escrita">5. Escrita</a>
+</nav>
+
+<section id="g1">
+  <h2>1. Gramática</h2>
+
+  <h3>1.1 A ideia principal</h3>
+  <p>O artigo vem antes do nome. Diz duas coisas ao mesmo tempo:</p>
+  <ul>
+    <li><b>o género e o número</b> do nome — masculino ou feminino, singular ou plural;</li>
+    <li><b>se já sabemos qual é</b> — este que conhecemos, ou um qualquer.</li>
+  </ul>
+  <p>Compare: <i>Quero <b>o</b> bolo</i> (aquele bolo, na montra) e <i>Quero <b>um</b> bolo</i> (um bolo qualquer).</p>
+
+  <h3>1.2 Artigos definidos — the</h3>
+  <p>Usamos quando a pessoa que nos ouve já sabe de que falamos.</p>
+  <div class="tabela">
+    <table>
+      <tr><th></th><th>Singular</th><th>Plural</th><th>Exemplo</th></tr>
+      <tr><td><b>Masculino</b></td><td>o</td><td>os</td><td><b>O</b> almoço estava muito bom.<br><b>Os</b> ovos são grandes.</td></tr>
+      <tr><td><b>Feminino</b></td><td>a</td><td>as</td><td><b>A</b> Maria está feliz.<br><b>As</b> minhas amigas são especiais.</td></tr>
+    </table>
+  </div>
+
+  <h3>1.3 Artigos indefinidos — a / an / some</h3>
+  <p>Usamos quando falamos de algo pela primeira vez, ou quando não interessa qual é.</p>
+  <div class="tabela">
+    <table>
+      <tr><th></th><th>Singular</th><th>Plural</th><th>Exemplo</th></tr>
+      <tr><td><b>Masculino</b></td><td>um</td><td>uns</td><td><b>Um</b> dia vou ser presidente.<br>Queres que compre <b>uns</b> ovos?</td></tr>
+      <tr><td><b>Feminino</b></td><td>uma</td><td>umas</td><td>Quero <b>uma</b> banana.<br>Ontem saí com <b>umas</b> amigas.</td></tr>
+    </table>
+  </div>
+
+  <div class="duo">
+    <div><h4>Usamos o / a / os / as quando…</h4><ul>
+      <li>já falámos daquela coisa: <i>Comprei um livro. <b>O</b> livro é caro.</i></li>
+      <li>só existe uma: <i><b>O</b> sol, <b>a</b> Ana, <b>o</b> Porto.</i></li>
+      <li>está antes de nomes de pessoas: <i><b>A</b> Maria, <b>o</b> João.</i></li>
+      <li>está antes de possessivos: <i><b>O</b> meu carro, <b>a</b> tua casa.</i></li>
+    </ul></div>
+    <div><h4>Usamos um / uma / uns / umas quando…</h4><ul>
+      <li>é a primeira vez: <i>Vi <b>um</b> gato no jardim.</i></li>
+      <li>é um qualquer: <i>Dá-me <b>uma</b> caneta, por favor.</i></li>
+      <li><i>uns / umas</i> significa «alguns, poucos»: <i>Comprei <b>uns</b> pães.</i></li>
+      <li>indicamos quantidade aproximada: <i>Espera <b>uns</b> dez minutos.</i></li>
+    </ul></div>
+  </div>
+
+  <h3>1.4 Contrações — a preposição junta-se ao artigo</h3>
+  <p>Em português, a preposição e o artigo não ficam separados. Escrevemos sempre a forma junta.</p>
+  <div class="tabela larga">
+    <table>
+      <tr><th>Preposição</th><th>+ o</th><th>+ a</th><th>+ os</th><th>+ as</th><th>Exemplo</th></tr>
+      <tr><td><b>de</b></td><td>do</td><td>da</td><td>dos</td><td>das</td><td>Venho <b>do</b> trabalho.</td></tr>
+      <tr><td><b>em</b></td><td>no</td><td>na</td><td>nos</td><td>nas</td><td>Estou <b>na</b> cozinha.</td></tr>
+      <tr><td><b>a</b></td><td>ao</td><td>à</td><td>aos</td><td>às</td><td>Vou <b>ao</b> cinema.</td></tr>
+      <tr><td><b>por</b></td><td>pelo</td><td>pela</td><td>pelos</td><td>pelas</td><td>Passei <b>pela</b> praça.</td></tr>
+    </table>
+  </div>
+  <p class="desliza">↔ Deslize a tabela para o lado para ver todas as colunas.</p>
+
+  <p>Também há contrações com os artigos indefinidos, mas só <i>de</i> e <i>em</i> as fazem:</p>
+  <div class="tabela">
+    <table>
+      <tr><th>Preposição</th><th>+ um</th><th>+ uma</th><th>+ uns</th><th>+ umas</th></tr>
+      <tr><td><b>de</b></td><td>dum</td><td>duma</td><td>duns</td><td>dumas</td></tr>
+      <tr><td><b>em</b></td><td>num</td><td>numa</td><td>nuns</td><td>numas</td></tr>
+    </table>
+  </div>
+  <p class="dica">Com <i>em</i>, a forma junta é obrigatória: <i>Moro <b>num</b> apartamento</i>. Com <i>de</i>, escreve-se <i>dum</i> ou <i>de um</i> — as duas estão certas, mas <i>de um</i> é mais comum na escrita.</p>
+
+  <div class="caixa aviso">
+    <b>Cuidado A2 — os três erros mais frequentes:</b>
+    <ul>
+      <li><b>O artigo antes de nomes de pessoas.</b> Dizemos <i>A Maria chegou</i>, não <i>Maria chegou</i>. Em inglês, francês ou alemão não se usa, por isso os alunos esquecem-se para sempre.</li>
+      <li><b>O artigo antes dos possessivos.</b> <i>O meu irmão</i>, <i>a minha mala</i> — nunca <i>meu irmão</i> sozinho.</li>
+      <li><b>a + a = à</b>, com acento grave. <i>Vou <b>à</b> praia</i>, não <i>Vou a praia</i>. O acento não muda quase nada no som, mas na escrita é obrigatório.</li>
+    </ul>
+  </div>
+
+  <div class="caixa verde">
+    <b>Nota de português europeu:</b> a contração é obrigatória. Nunca se escreve <i>de o</i>, <i>em a</i> nem <i>a os</i>. E lembre-se: em Portugal diz-se <i>Vou <b>ao</b> cinema</i>; a forma <i>vou no cinema</i>, comum no Brasil, não se usa aqui.
+  </div>
+</section>
+
+<section id="ex">
+  <h2>2. Exemplos comentados</h2>
+  <p>Leia cada par com atenção e diga as frases em voz alta.</p>
+
+  <h3>2.1 Definido ou indefinido?</h3>
+  <div class="ex"><b>Comprei <u>um</u> bolo para o teu aniversário.</b> → é a primeira vez que falo do bolo. <span class="dica">Comparar: <i>Onde está <u>o</u> bolo que comprei ontem?</i> — agora já sabemos qual é.</span></div>
+  <div class="ex"><b>Preciso de <u>uma</u> caneta.</b> → qualquer caneta serve. <span class="dica">Comparar: <i>Preciso d<u>a</u> caneta azul.</i> — aquela caneta e mais nenhuma.</span></div>
+  <div class="ex"><b>Vi <u>uns</u> amigos no café.</b> → alguns amigos, não digo quantos. <span class="dica">Comparar: <i>Vi <u>os</u> amigos do Pedro no café.</i> — um grupo que já conhecemos.</span></div>
+  <div class="ex"><b><u>O</u> almoço estava muito bom.</b> → falamos do almoço de hoje, aquele que comemos. <span class="dica">Comparar: <i>Um almoço em família demora sempre três horas.</i> — qualquer almoço, em geral.</span></div>
+
+  <h3>2.2 O artigo obrigatório do português</h3>
+  <div class="ex"><b><u>A</u> Maria está feliz.</b> → antes de nomes de pessoas, o artigo é normal em Portugal. <span class="dica">Comparar: <i>Maria, estás feliz?</i> — quando falamos <b>com</b> a pessoa, não usamos artigo.</span></div>
+  <div class="ex"><b><u>As</u> minhas amigas são especiais.</b> → possessivo leva artigo antes. <span class="dica">Comparar: <i>Estas amigas são minhas.</i> — depois do verbo, sem artigo.</span></div>
+  <div class="ex"><b>Vou ver <u>o</u> Dr. Silva às três.</b> → também com títulos: o senhor, a doutora, o professor. <span class="dica">Comparar: <i>Bom dia, Dr. Silva!</i> — a chamar por ele, sem artigo.</span></div>
+
+  <h3>2.3 Contrações em movimento</h3>
+  <div class="ex"><b>Saio d<u>e</u> casa às oito e vou <u>ao</u> trabalho.</b> → <i>a + o = ao</i>. <span class="dica">Repare: <i>casa</i> aqui não leva artigo — <i>sair de casa</i>, <i>ir para casa</i> são expressões fixas.</span></div>
+  <div class="ex"><b>O autocarro passa <u>pela</u> Avenida e para <u>na</u> estação.</b> → <i>por + a = pela</i>, <i>em + a = na</i>. <span class="dica">Comparar: <i>passa por Lisboa</i> — sem artigo, porque a maioria dos nomes de cidades não leva artigo.</span></div>
+  <div class="ex"><b>Gosto <u>das</u> praias <u>do</u> Algarve.</b> → <i>de + as = das</i>, <i>de + o = do</i>. <span class="dica">Atenção: o verbo <i>gostar</i> pede sempre <i>de</i>: <i>gosto de ti</i>, <i>gosto do café</i>.</span></div>
+  <div class="ex"><b>À segunda-feira, vou <u>às</u> compras.</b> → <i>a + a = à</i>, <i>a + as = às</i>, com acento grave. <span class="dica">Comparar: <i>Chego a Lisboa às nove.</i> — <i>a</i> sozinho antes de <i>Lisboa</i>, mas <i>às</i> antes das horas.</span></div>
+  <div class="ex"><b>Moro <u>num</u> apartamento pequeno.</b> → <i>em + um = num</i>, sempre junto. <span class="dica">Comparar: <i>Moro no apartamento do meu irmão.</i> — aqui já sabemos qual é.</span></div>
+</section>
+
+<section id="pratica">
+  <h2>3. Prática</h2>
+
+  <!-- ---- A: reconhecimento (menu) ---- -->
+  <h3>Exercício A — Artigos definidos</h3>
+  <p class="dica">Escolha <i>o</i>, <i>a</i>, <i>os</i> ou <i>as</i>. Atenção ao género e ao número do nome.</p>
+  <div class="item">
+    <span class="num">1</span>
+    <span class="frase"><select data-a="O"><option value="">—</option><option>O</option><option>A</option><option>Os</option><option>As</option></select> almoço estava muito bom.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">2</span>
+    <span class="frase"><select data-a="Os"><option value="">—</option><option>O</option><option>A</option><option>Os</option><option>As</option></select> ovos são grandes.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">3</span>
+    <span class="frase"><select data-a="A"><option value="">—</option><option>O</option><option>A</option><option>Os</option><option>As</option></select> Maria está feliz.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">4</span>
+    <span class="frase"><select data-a="As"><option value="">—</option><option>O</option><option>A</option><option>Os</option><option>As</option></select> minhas amigas são especiais.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">5</span>
+    <span class="frase">Fecha <select data-a="a"><option value="">—</option><option>o</option><option>a</option><option>os</option><option>as</option></select> janela da cozinha, por favor.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">6</span>
+    <span class="frase">Onde puseste <select data-a="as"><option value="">—</option><option>o</option><option>a</option><option>os</option><option>as</option></select> chaves do carro?</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">7</span>
+    <span class="frase"><select data-a="O"><option value="">—</option><option>O</option><option>A</option><option>Os</option><option>As</option></select> teu telemóvel está em cima da mesa.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="barra">
+    <button onclick="corrigir('pratica')">Verificar tudo</button>
+    <button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button>
+    <button class="sec" onclick="limpar('pratica')">Limpar</button>
+  </div>
+
+  <!-- ---- B: preencher o espaço ---- -->
+  <h3>Exercício B — Artigos indefinidos</h3>
+  <p class="dica">Escreva <i>um</i>, <i>uma</i>, <i>uns</i> ou <i>umas</i>.</p>
+  <div class="item">
+    <span class="num">1</span>
+    <span class="frase"><input type="text" data-a="Um" autocapitalize="off" autocomplete="off"> dia vou ser presidente.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">2</span>
+    <span class="frase">Queres que compre <input type="text" data-a="uns" autocapitalize="off" autocomplete="off"> ovos?</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">3</span>
+    <span class="frase">Quero <input type="text" data-a="uma" autocapitalize="off" autocomplete="off"> banana.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">4</span>
+    <span class="frase">Ontem saí com <input type="text" data-a="umas" autocapitalize="off" autocomplete="off"> amigas.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">5</span>
+    <span class="frase">Está a chover: preciso de <input type="text" data-a="um" autocapitalize="off" autocomplete="off"> guarda-chuva.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">6</span>
+    <span class="frase">O comboio chega daqui a <input type="text" data-a="uns" autocapitalize="off" autocomplete="off"> vinte minutos.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">7</span>
+    <span class="frase">Desculpe, há <input type="text" data-a="uma" autocapitalize="off" autocomplete="off"> farmácia aqui perto?</span>
+    <div class="fb"></div>
+  </div>
+  <div class="barra">
+    <button onclick="corrigir('pratica')">Verificar tudo</button>
+    <button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button>
+    <button class="sec" onclick="limpar('pratica')">Limpar</button>
+  </div>
+
+  <!-- ---- C: contrações ---- -->
+  <h3>Exercício C — Contrações</h3>
+  <p class="dica">Junte a preposição e o artigo entre parênteses. Exemplo: (de + o) → <i>do</i>.</p>
+  <div class="item">
+    <span class="num">1</span>
+    <span class="frase">Venho <input type="text" data-a="do" autocapitalize="off" autocomplete="off"> (de + o) trabalho.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">2</span>
+    <span class="frase">O livro está <input type="text" data-a="na" autocapitalize="off" autocomplete="off"> (em + a) mesa da sala.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">3</span>
+    <span class="frase">Vamos <input type="text" data-a="ao" autocapitalize="off" autocomplete="off"> (a + o) supermercado?</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">4</span>
+    <span class="frase">Passámos <input type="text" data-a="pelas" autocapitalize="off" autocomplete="off"> (por + as) ruas antigas da cidade.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">5</span>
+    <span class="frase">Gosto muito <input type="text" data-a="das" autocapitalize="off" autocomplete="off"> (de + as) tuas fotografias.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">6</span>
+    <span class="frase">A reunião começa <input type="text" data-a="às" autocapitalize="off" autocomplete="off"> (a + as) nove horas.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">7</span>
+    <span class="frase">Moro <input type="text" data-a="num" autocapitalize="off" autocomplete="off"> (em + um) apartamento pequeno.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">8</span>
+    <span class="frase">Amanhã vou <input type="text" data-a="à" autocapitalize="off" autocomplete="off"> (a + a) praia com os meus primos.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">9</span>
+    <span class="frase">Falámos <input type="text" data-a="do" autocapitalize="off" autocomplete="off"> (de + o) filme durante toda a viagem.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="barra">
+    <button onclick="corrigir('pratica')">Verificar tudo</button>
+    <button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button>
+    <button class="sec" onclick="limpar('pratica')">Limpar</button>
+  </div>
+
+  <!-- ---- D: transformação ---- -->
+  <h3>Exercício D — Faltam os artigos</h3>
+  <p class="dica">Estas frases estão erradas: falta um artigo, ou falta a contração. Escreva a frase correta.</p>
+  <div class="item">
+    <span class="num">1</span>
+    <span class="frase"><i>Maria comprou carro novo.</i></span>
+    <input class="longo" type="text" data-a="A Maria comprou um carro novo." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">2</span>
+    <span class="frase"><i>Meu pai trabalha em banco.</i></span>
+    <input class="longo" type="text" data-a="O meu pai trabalha num banco.|O meu pai trabalha num banco" autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">3</span>
+    <span class="frase"><i>Vou a farmácia que fica em rua principal.</i></span>
+    <input class="longo" type="text" data-a="Vou à farmácia que fica na rua principal." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">4</span>
+    <span class="frase"><i>Deixei chaves em cima de mesa.</i></span>
+    <input class="longo" type="text" data-a="Deixei as chaves em cima da mesa." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">5</span>
+    <span class="frase"><i>João gosta de praias de Algarve.</i></span>
+    <input class="longo" type="text" data-a="O João gosta das praias do Algarve." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="barra">
+    <button onclick="corrigir('pratica')">Verificar tudo</button>
+    <button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button>
+    <button class="sec" onclick="limpar('pratica')">Limpar</button>
+  </div>
+
+  <!-- ---- E: produção ---- -->
+  <h3>Exercício E — Construir a frase</h3>
+  <p class="dica">Ordene as palavras. Escreva a frase completa, com maiúscula e ponto final.</p>
+  <div class="item">
+    <span class="num">1</span>
+    <span class="frase">cinema / hoje / ao / vamos / nós</span>
+    <input class="longo" type="text" data-a="Nós vamos ao cinema hoje.|Hoje nós vamos ao cinema.|Vamos ao cinema hoje." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">2</span>
+    <span class="frase">sofá / dorme / o / no / gato</span>
+    <input class="longo" type="text" data-a="O gato dorme no sofá." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">3</span>
+    <span class="frase">ovos / no / uns / comprei / mercado</span>
+    <input class="longo" type="text" data-a="Comprei uns ovos no mercado.|No mercado comprei uns ovos." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">4</span>
+    <span class="frase">oito / minhas / às / amigas / chegam / as</span>
+    <input class="longo" type="text" data-a="As minhas amigas chegam às oito.|Às oito chegam as minhas amigas." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">5</span>
+    <span class="frase">escola / pela / autocarro / passa / o</span>
+    <input class="longo" type="text" data-a="O autocarro passa pela escola." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="barra">
+    <button onclick="corrigir('pratica')">Verificar tudo</button>
+    <button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button>
+    <button class="sec" onclick="limpar('pratica')">Limpar</button>
+  </div>
+</section>
+
+<section id="leitura">
+  <h2>4. Prática de leitura</h2>
+  <p class="dica">Leia o texto duas vezes: a primeira para entender a história, a segunda para reparar nas formas destacadas.</p>
+
+  <div class="leitura">
+    <h3>Sábado no mercado</h3>
+    <p><span class="g">A</span> Rita mora <span class="g">numa</span> rua estreita de Setúbal, perto <span class="g">do</span> mercado. Todos <span class="g">os</span> sábados sai de casa <span class="g">às</span> nove e vai <span class="g">ao</span> mercado com <span class="g">uma</span> lista na mão.</p>
+    <p>Hoje quer comprar peixe. Passa <span class="g">pelas</span> bancas <span class="g">da</span> fruta e chega <span class="g">à</span> banca <span class="g">da</span> D. Amélia, <span class="g">a</span> peixeira <span class="g">do</span> costume.</p>
+    <p>— Bom dia, menina Rita! Hoje <span class="g">as</span> sardinhas estão baratas — diz <span class="g">a</span> D. Amélia.</p>
+    <p>— Então quero <span class="g">um</span> quilo, se faz favor. E também <span class="g">umas</span> laranjas para <span class="g">a</span> sobremesa.</p>
+    <p><span class="g">A</span> Rita procura <span class="g">a</span> carteira <span class="g">na</span> mochila. Procura outra vez. <span class="g">A</span> carteira não está lá: ficou em cima <span class="g">da</span> mesa <span class="g">da</span> cozinha, ao lado <span class="g">das</span> chaves.</p>
+    <p>— Desculpe, esqueci-me <span class="g">do</span> dinheiro — diz, com <span class="g">a</span> cara vermelha.</p>
+    <p><span class="g">A</span> peixeira sorri e mete <span class="g">o</span> saco <span class="g">na</span> mochila <span class="g">da</span> Rita.</p>
+    <p>— Leve <span class="g">o</span> peixe. Paga-me para <span class="g">a</span> semana. <span class="g">O</span> mercado não foge e <span class="g">a</span> menina também não.</p>
+    <p><span class="g">À</span> uma hora, <span class="g">o</span> almoço está <span class="g">na</span> mesa. <span class="g">As</span> sardinhas cheiram bem e <span class="g">o</span> pai <span class="g">da</span> Rita diz que são <span class="g">as</span> melhores <span class="g">do</span> ano. Ela não conta <span class="g">a</span> história <span class="g">do</span> dinheiro. Conta só que <span class="g">a</span> D. Amélia é <span class="g">uma</span> senhora com <span class="g">um</span> coração enorme.</p>
+  </div>
+
+  <h3>4.1 Compreensão do texto</h3>
+  <div id="quiz" class="quiz">
+    <div class="item">
+      <span class="num">1</span>
+      <span class="frase"><b>Onde vive a Rita?</b>
+        <label><input type="radio" name="q1" value="a"> <span>Numa quinta longe da cidade.</span></label>
+        <label><input type="radio" name="q1" value="b" data-ok="1"> <span>Numa rua estreita, perto do mercado.</span></label>
+        <label><input type="radio" name="q1" value="c"> <span>Em cima do mercado de Setúbal.</span></label>
+      </span>
+      <div class="fb"></div>
+    </div>
+    <div class="item">
+      <span class="num">2</span>
+      <span class="frase"><b>O que quer comprar hoje?</b>
+        <label><input type="radio" name="q2" value="a"> <span>Só fruta.</span></label>
+        <label><input type="radio" name="q2" value="b"> <span>Pão e leite.</span></label>
+        <label><input type="radio" name="q2" value="c" data-ok="1"> <span>Sardinhas e umas laranjas.</span></label>
+      </span>
+      <div class="fb"></div>
+    </div>
+    <div class="item">
+      <span class="num">3</span>
+      <span class="frase"><b>Porque é que a Rita fica com a cara vermelha?</b>
+        <label><input type="radio" name="q3" value="a" data-ok="1"> <span>Porque não tem o dinheiro consigo.</span></label>
+        <label><input type="radio" name="q3" value="b"> <span>Porque o peixe está caro.</span></label>
+        <label><input type="radio" name="q3" value="c"> <span>Porque chegou atrasada ao mercado.</span></label>
+      </span>
+      <div class="fb"></div>
+    </div>
+    <div class="item">
+      <span class="num">4</span>
+      <span class="frase"><b>Onde está a carteira da Rita?</b>
+        <label><input type="radio" name="q4" value="a"> <span>Ficou na banca da D. Amélia.</span></label>
+        <label><input type="radio" name="q4" value="b" data-ok="1"> <span>Ficou em casa, na cozinha.</span></label>
+        <label><input type="radio" name="q4" value="c"> <span>Está no fundo da mochila.</span></label>
+      </span>
+      <div class="fb"></div>
+    </div>
+    <div class="item">
+      <span class="num">5</span>
+      <span class="frase"><b>O que faz a peixeira?</b>
+        <label><input type="radio" name="q5" value="a"> <span>Guarda o peixe para o dia seguinte.</span></label>
+        <label><input type="radio" name="q5" value="b"> <span>Oferece o peixe de presente.</span></label>
+        <label><input type="radio" name="q5" value="c" data-ok="1"> <span>Deixa a Rita levar o peixe e pagar depois.</span></label>
+      </span>
+      <div class="fb"></div>
+    </div>
+    <div class="item">
+      <span class="num">6</span>
+      <span class="frase"><b>Porque é que a Rita diz que a D. Amélia tem «um coração enorme»?</b>
+        <label><input type="radio" name="q6" value="a"> <span>Porque lhe fez um desconto no peixe.</span></label>
+        <label><input type="radio" name="q6" value="b" data-ok="1"> <span>Porque confiou nela sem receber o dinheiro.</span></label>
+        <label><input type="radio" name="q6" value="c"> <span>Porque a levou a casa de carro.</span></label>
+      </span>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="barra"><button onclick="corrigirQuiz()">Verificar compreensão</button></div>
+
+  <h3>4.2 Caça à gramática</h3>
+  <p class="dica">Volte ao texto e explique as formas destacadas.</p>
+  <div class="item">
+    <span class="num">1</span>
+    <span class="frase">Em «<b>A</b> Rita mora…», o artigo antes do nome próprio é
+      <select data-a="obrigatório"><option value="">—</option><option>obrigatório</option><option>proibido</option><option>opcional</option></select> em português europeu.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">2</span>
+    <span class="frase">«<b>numa</b> rua estreita» é a junção de <i>em</i> com
+      <select data-a="uma"><option value="">—</option><option>a</option><option>uma</option><option>umas</option></select>.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">3</span>
+    <span class="frase">«perto <b>do</b> mercado» é a junção de <i>de</i> com
+      <select data-a="o"><option value="">—</option><option>o</option><option>um</option><option>os</option></select>.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">4</span>
+    <span class="frase">«<b>às</b> nove» leva acento grave porque é a junção de <i>a</i> com
+      <select data-a="as"><option value="">—</option><option>os</option><option>as</option><option>umas</option></select>.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">5</span>
+    <span class="frase">Em «quero <b>um</b> quilo», usamos o artigo indefinido porque falamos de uma quantidade
+      <select data-a="nova"><option value="">—</option><option>nova</option><option>já conhecida</option></select>, ainda não referida.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">6</span>
+    <span class="frase">Em «<b>o</b> almoço está na mesa», usamos o artigo definido porque
+      <select data-a="já sabemos qual é"><option value="">—</option><option>já sabemos qual é</option><option>é a primeira vez que falamos dele</option></select>.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">7</span>
+    <span class="frase">«<b>pelas</b> bancas» é a junção de <i>por</i> com
+      <select data-a="as"><option value="">—</option><option>a</option><option>as</option><option>umas</option></select>.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="barra">
+    <button onclick="corrigir('leitura')">Verificar</button>
+    <button class="sec" onclick="mostrar('leitura')">Mostrar soluções</button>
+    <button class="sec" onclick="limpar('leitura')">Limpar</button>
+  </div>
+
+  <h3>4.3 Vocabulário do texto</h3>
+  <div class="glossario">
+    <div><b>a banca</b> — a mesa onde o vendedor põe os produtos no mercado.</div>
+    <div><b>a peixeira</b> — a mulher que vende peixe.</div>
+    <div><b>estreita</b> — pouco larga.</div>
+    <div><b>cumprimentar</b> — dizer «bom dia» ou «olá» a alguém.</div>
+    <div><b>se faz favor</b> — fórmula de delicadeza usada em Portugal (PT-PT); o mesmo que «por favor».</div>
+    <div><b>a carteira</b> — o objeto onde guardamos o dinheiro e os cartões.</div>
+    <div><b>a mochila</b> — o saco que se leva às costas.</div>
+    <div><b>esquecer-se de</b> — deixar de ter na memória.</div>
+    <div><b>para a semana</b> — na próxima semana (PT-PT).</div>
+    <div><b>a sobremesa</b> — o que se come no fim da refeição.</div>
+    <div><b>o costume</b> — o hábito; «a peixeira do costume» = a de sempre.</div>
+    <div><b>enorme</b> — muito grande.</div>
+  </div>
+</section>
+
+<section id="escrita">
+  <h2>5. Desafio de escrita</h2>
+  <p>Escreva 80 a 120 palavras sobre <b>as suas compras do fim de semana</b>: onde vai, o que compra, com quem fala. Use obrigatoriamente:</p>
+  <ul>
+    <li>três contrações diferentes (por exemplo <i>ao</i>, <i>na</i>, <i>do</i>, <i>pela</i>, <i>às</i>);</li>
+    <li>um nome de pessoa com artigo (<i>a Ana</i>, <i>o meu vizinho</i>);</li>
+    <li>dois artigos indefinidos (<i>um</i>, <i>uma</i>, <i>uns</i>, <i>umas</i>);</li>
+    <li>uma frase com <i>gostar de</i> + artigo (<i>gosto do…</i>, <i>gosto das…</i>).</li>
+  </ul>
+  <textarea placeholder="Escreva aqui…"></textarea>
+  <details>
+    <summary>Ver um texto-modelo</summary>
+    <p>Ao sábado de manhã vou <b>ao</b> mercado <b>da</b> minha rua. Saio de casa <b>às</b> dez e passo <b>pela</b> padaria para comprar <b>um</b> pão quente. No mercado compro sempre <b>umas</b> maçãs e legumes para a semana. <b>A</b> senhora <b>da</b> banca <b>do</b> peixe conhece-me e pergunta-me pela minha mãe. Gosto muito <b>das</b> conversas <b>do</b> mercado: as pessoas falam, riem e não têm pressa. Depois volto <b>a</b> casa, ponho as compras <b>na</b> cozinha e faço <b>o</b> almoço. <b>O</b> meu irmão chega sempre à hora certa — nunca ajuda, mas come tudo.</p>
+  </details>
+  <p class="dica">Antes de terminar, releia o seu texto e faça duas perguntas: <b>(1)</b> escrevi «de o», «em a» ou «a a» em algum sítio? Se sim, junte as palavras. <b>(2)</b> os nomes de pessoas e os possessivos têm artigo à frente? Se não, acrescente-o.</p>
+</section>
+
+<div id="placar">
+  <div>Pontuação: <span class="pontos" id="pts">0 / 0</span></div>
+  <span id="msg">Verifique cada exercício para somar pontos.</span>
+</div>
+
+</div>
+
+<script>
+/* Motor de autocorreção. Não é preciso alterar nada aqui.
+   Cada campo com data-a é corrigido automaticamente.
+   Alternativas aceites separam-se com |  */
+let acertos = 0, total = 0;
+
+function limparTexto(s){
+  return (s||"").toLowerCase().trim().replace(/[.,;:!?«»"']/g,"").replace(/\s+/g," ");
+}
+function semAcentos(s){
+  return limparTexto(s).normalize("NFD").replace(new RegExp("[\\u0300-\\u036f]","g"),"");
+}
+function atualizarPlacar(){
+  document.getElementById("pts").textContent = acertos + " / " + total;
+  const m = document.getElementById("msg");
+  if(total === 0){ m.textContent = "Verifique cada exercício para somar pontos."; return; }
+  const p = acertos/total;
+  m.textContent = p === 1 ? "Excelente! Domina esta matéria."
+    : p >= .8 ? "Muito bom — reveja apenas os erros."
+    : p >= .5 ? "Bom começo. Volte à secção 1 e repita o exercício."
+    : "Releia a gramática com calma e tente outra vez.";
+}
+function avaliar(campo){
+  const esperadas = campo.dataset.a.split("|");
+  const dada = campo.value;
+  if(!limparTexto(dada)) return "vazio";
+  for(const e of esperadas){ if(limparTexto(dada) === limparTexto(e)) return "ok"; }
+  for(const e of esperadas){ if(semAcentos(dada) === semAcentos(e)) return "quase"; }
+  return "erro";
+}
+function corrigir(secId){
+  acertos = 0; total = 0;
+  document.querySelectorAll("[data-a]").forEach(c => {
+    const fb = c.closest(".item").querySelector(".fb");
+    const r = avaliar(c);
+    const revelado = c.dataset.revelado === "1";
+    if(r !== "vazio" && !revelado){ total++; if(r === "ok" || r === "quase") acertos++; }
+    if(c.closest("#"+secId) && !revelado){
+      if(r === "vazio"){ fb.className="fb"; fb.textContent=""; }
+      else if(r === "ok"){ fb.className="fb ok"; fb.textContent = "✔ Certo!"; }
+      else if(r === "quase"){ fb.className="fb quase"; fb.textContent = "≈ Quase! Atenção à acentuação: «" + c.dataset.a.split("|")[0] + "»"; }
+      else { fb.className="fb erro"; fb.textContent = "✘ Reveja. Resposta: «" + c.dataset.a.split("|")[0] + "»"; }
+    }
+  });
+  document.querySelectorAll("#quiz .item").forEach(it => {
+    const marcado = it.querySelector("input[type=radio]:checked");
+    if(marcado){ total++; if(marcado.dataset.ok) acertos++; }
+  });
+  atualizarPlacar();
+}
+function corrigirQuiz(){
+  document.querySelectorAll("#quiz .item").forEach(it => {
+    const fb = it.querySelector(".fb");
+    const marcado = it.querySelector("input[type=radio]:checked");
+    if(!marcado){ fb.className="fb"; fb.textContent="— ainda sem resposta"; return; }
+    if(marcado.dataset.ok){ fb.className="fb ok"; fb.textContent="✔ Certo!"; }
+    else {
+      const certa = it.querySelector("input[data-ok]").parentElement.textContent.trim();
+      fb.className="fb erro"; fb.textContent="✘ Não. A resposta certa é: " + certa;
+    }
+  });
+  corrigir("leitura");
+}
+function mostrar(secId){
+  document.querySelectorAll("#"+secId+" [data-a]").forEach(c => {
+    const v = c.dataset.a.split("|")[0];
+    c.value = v;
+    c.dataset.revelado = "1";
+    const fb = c.closest(".item").querySelector(".fb");
+    fb.className="fb quase"; fb.textContent="Solução: " + v;
+  });
+}
+function limpar(secId){
+  document.querySelectorAll("#"+secId+" [data-a]").forEach(c => {
+    c.value = "";
+    delete c.dataset.revelado;
+    const fb = c.closest(".item").querySelector(".fb");
+    fb.className="fb"; fb.textContent="";
+  });
+  acertos = 0; total = 0; atualizarPlacar();
+}
+document.querySelectorAll("[data-a]").forEach(c => {
+  c.addEventListener("keydown", e => {
+    if(e.key === "Enter"){ e.preventDefault(); corrigir(c.closest("section").id); }
+  });
+});
+atualizarPlacar();
+</script>
+</body>
+</html>
