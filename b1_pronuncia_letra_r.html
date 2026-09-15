@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2f6b4f">
+<meta name="description" content="Ficha autónoma de nível B1 sobre a pronúncia da letra R em português europeu: R forte, R fraco e RR.">
+<title>A Letra «R» em Português Europeu — Nível B1</title>
+<style>
+  :root{
+    --verde:#2f6b4f; --verde-claro:#e4efe7; --vermelho:#b03a3a; --vermelho-claro:#fbeaea;
+    --azul:#c7d7e4; --azul-esc:#2b4a63; --areia:#f6f0e9; --texto:#22303a; --cinza:#77838b;
+    --ok:#1e7a4b; --erro:#b03a3a; --quase:#9a6d05;
+    --borda:#e2ddd5; --raio:14px; --toque:44px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--areia);color:var(--texto);
+    font-size:clamp(15.5px,1vw + 13px,17px);line-height:1.65;overflow-x:hidden;
+  }
+  img,table{max-width:100%}
+  .wrap{width:100%;max-width:920px;margin:0 auto;padding:clamp(12px,3vw,24px) clamp(12px,4vw,20px) 90px}
+
+  header.topo{
+    background:linear-gradient(135deg,#2f6b4f,#3d8a66);color:#fff;
+    border-radius:var(--raio);padding:clamp(20px,5vw,30px) clamp(18px,5vw,28px);margin-bottom:16px;
+  }
+  header.topo h1{margin:0 0 8px;font-size:clamp(1.35rem,4.5vw,2rem);line-height:1.25;letter-spacing:.3px}
+  header.topo p{margin:0 0 6px;opacity:.94;font-size:clamp(.9rem,2.6vw,1rem)}
+  header.topo p:last-child{margin-bottom:0}
+  .nivel{display:inline-block;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.45);
+    padding:2px 11px;border-radius:20px;font-size:.75em;white-space:nowrap;vertical-align:middle}
+
+  nav.pills{display:flex;gap:8px;margin:0 0 18px;overflow-x:auto;padding-bottom:4px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+  nav.pills::-webkit-scrollbar{display:none}
+  nav.pills a{flex:0 0 auto;scroll-snap-align:start;background:#fff;border:1px solid #ddd3c8;
+    padding:9px 15px;border-radius:22px;text-decoration:none;color:var(--azul-esc);
+    font-size:.87rem;font-weight:600;min-height:var(--toque);display:flex;align-items:center}
+  nav.pills a:hover,nav.pills a:focus-visible{background:var(--verde);color:#fff;border-color:var(--verde)}
+
+  section{background:#fff;border-radius:var(--raio);padding:clamp(16px,4vw,26px);
+    margin-bottom:18px;box-shadow:0 2px 10px rgba(0,0,0,.05);scroll-margin-top:12px}
+  h2{color:var(--vermelho);border-bottom:3px solid var(--verde-claro);padding-bottom:8px;
+    margin:0 0 14px;font-size:clamp(1.2rem,3.6vw,1.5rem)}
+  h3{color:var(--azul-esc);margin:24px 0 8px;font-size:clamp(1.02rem,2.9vw,1.15rem)}
+  h4{margin:18px 0 6px;color:var(--verde);font-size:clamp(.97rem,2.6vw,1.05rem)}
+  p{margin:0 0 10px}
+  ul{margin:8px 0;padding-left:20px}
+  li{margin:5px 0}
+
+  .tabela{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0;
+    border-radius:10px;border:1px solid var(--borda)}
+  .tabela table{width:100%;border-collapse:collapse;font-size:.93em;min-width:min(100%,420px)}
+  .tabela th,.tabela td{border:1px solid var(--borda);padding:8px 11px;text-align:left;vertical-align:top}
+  .tabela tr>*:first-child{border-left:none}
+  .tabela tr>*:last-child{border-right:none}
+  .tabela th{background:var(--verde-claro);color:var(--azul-esc);font-weight:700;white-space:nowrap}
+  .tabela.larga table{min-width:520px}
+  .desliza{font-size:.78rem;color:var(--cinza);font-style:italic;margin:-6px 0 12px}
+  @media (min-width:640px){.desliza{display:none}}
+
+  .duo{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
+  @media (min-width:700px){.duo{grid-template-columns:1fr 1fr}}
+  .duo>div{border:1px solid var(--borda);border-radius:10px;padding:14px 16px;background:#fdfdfb}
+  .duo h4{margin:0 0 8px}
+  .duo ul{margin:0;padding-left:18px;font-size:.95em}
+
+  .caixa{background:var(--azul);border-radius:10px;padding:14px 16px;margin:14px 0}
+  .caixa.verde{background:var(--verde-claro)}
+  .caixa.aviso{background:var(--vermelho-claro);border-left:5px solid var(--vermelho)}
+  .caixa ul{margin:8px 0 0}
+  .ex{background:#fafaf7;border-left:4px solid var(--verde);padding:10px 14px;margin:9px 0;
+    border-radius:0 8px 8px 0;font-size:.97em}
+  .ex b{color:var(--verde)}
+  .dica{color:var(--cinza);font-size:.86em;font-style:italic}
+
+  .item{display:grid;grid-template-columns:28px 1fr;gap:6px 10px;align-items:start;
+    padding:12px 0;border-bottom:1px dashed #ece7df}
+  .item:last-child{border-bottom:none}
+  .num{grid-row:1;grid-column:1;background:var(--azul-esc);color:#fff;width:26px;height:26px;
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:.78rem;font-weight:700;margin-top:4px}
+  .frase{grid-column:2}
+  .item>input.longo{grid-column:2;width:100%}
+  .fb{grid-column:2;font-size:.88em;font-weight:600;min-height:0}
+  .fb:empty{display:none}
+  .fb.ok{color:var(--ok)} .fb.erro{color:var(--erro)} .fb.quase{color:var(--quase)}
+
+  input[type=text]{border:none;border-bottom:2px solid var(--azul-esc);background:#fff;
+    font-size:16px;font-family:inherit;padding:6px;width:8.5em;max-width:100%;
+    color:var(--azul-esc);border-radius:4px 4px 0 0}
+  input.longo{display:block;width:100%;margin-top:8px;border:2px solid #dcd6cc;
+    border-radius:10px;padding:11px 12px}
+  input[type=text]:focus{outline:2px solid var(--verde);outline-offset:1px;background:#f4fbf6}
+  select{font-family:inherit;font-size:16px;padding:8px 10px;border-radius:10px;
+    border:2px solid #dcd6cc;background:#fff;max-width:100%;min-height:var(--toque)}
+  select:focus{outline:2px solid var(--verde);outline-offset:1px}
+
+  .barra{display:flex;gap:10px;align-items:center;margin-top:18px;flex-wrap:wrap}
+  button{background:var(--verde);color:#fff;border:none;padding:0 20px;min-height:var(--toque);
+    border-radius:24px;font-size:.92rem;font-weight:600;cursor:pointer;font-family:inherit;flex:1 1 auto}
+  @media (min-width:520px){button{flex:0 1 auto}}
+  button:hover{background:#255540}
+  button:active{transform:scale(.98)}
+  button.sec{background:#fff;color:var(--azul-esc);border:2px solid #dcd6cc}
+  button.sec:hover{background:#f0ece5}
+
+  .leitura{background:#fffdf8;border:1px solid #eee6d8;border-radius:12px;
+    padding:clamp(14px,4vw,22px);font-size:clamp(1rem,2.7vw,1.06rem);line-height:1.8}
+  .leitura h3{margin-top:0}
+  .leitura p{margin:0 0 14px}
+  .leitura p:last-child{margin-bottom:0}
+  .leitura .g{background:#e4efe7;border-radius:4px;padding:0 3px}
+  .quiz label{display:flex;gap:9px;align-items:flex-start;padding:9px 4px;cursor:pointer;
+    min-height:var(--toque);border-radius:8px}
+  .quiz label:hover{background:#f7f4ee}
+  .quiz input[type=radio]{width:20px;height:20px;margin:2px 0 0;flex:0 0 auto;accent-color:var(--verde)}
+  .glossario{display:grid;grid-template-columns:1fr;gap:6px 26px;font-size:.93em}
+  @media (min-width:640px){.glossario{grid-template-columns:1fr 1fr}}
+
+  textarea{width:100%;min-height:150px;border:2px solid #dcd6cc;border-radius:10px;padding:12px;
+    font-family:inherit;font-size:16px;line-height:1.6;resize:vertical}
+  textarea:focus{outline:2px solid var(--verde);outline-offset:1px}
+  details{margin-top:12px;background:#f7f4ee;border-radius:10px;padding:12px 15px}
+  summary{cursor:pointer;font-weight:600;color:var(--azul-esc);min-height:28px}
+
+  #placar{position:sticky;bottom:0;z-index:5;background:var(--azul-esc);color:#fff;
+    border-radius:12px;padding:12px 18px calc(12px + env(safe-area-inset-bottom));
+    display:flex;justify-content:space-between;align-items:center;font-weight:600;
+    box-shadow:0 -2px 14px rgba(0,0,0,.18);flex-wrap:wrap;gap:4px 12px;font-size:.92rem}
+  #placar span{font-weight:400;font-size:.85em;opacity:.88}
+  .pontos{font-weight:700}
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  @media print{
+    nav.pills,#placar,.barra{display:none}
+    body{background:#fff}
+    section{box-shadow:none;border:1px solid #ddd;page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ####### CABEÇALHO: substituir ####### -->
+<header class="topo">
+  <h1>A Letra «R» <span class="nivel">Nível B1</span></h1>
+  <p>Ficha de estudo autónomo · O R forte (gutural), o RR e o R fraco (vibração simples) em português europeu</p>
+  <p style="font-size:.9em">Leia a regra, observe os exemplos, faça os exercícios e verifique as respostas. Duração: 45–50 minutos.</p>
+</header>
+<!-- ####### FIM CABEÇALHO ####### -->
+
+<nav class="pills">
+  <a href="#g1">1. Gramática</a>
+  <a href="#ex">2. Exemplos</a>
+  <a href="#pratica">3. Prática</a>
+  <a href="#leitura">4. Leitura</a>
+  <a href="#escrita">5. Escrita</a>
+</nav>
+
+<!-- ####### GRAMÁTICA: substituir todo o interior da secção ####### -->
+<section id="g1">
+  <h2>1. Gramática</h2>
+
+  <h3>1.1 Duas letras, dois sons</h3>
+  <p>Em português europeu, a letra R não tem sempre o mesmo som. Existem, na prática, dois sons diferentes: um <b>R forte</b> (gutural, produzido lá atrás, na garganta) e um <b>R fraco</b> (uma pequena pancada rápida da ponta da língua no céu da boca, parecido com o <i>tt</i> de <i>better</i> em inglês americano). Não é a ortografia que muda — é a <b>posição do R na palavra</b> que decide qual dos dois sons se usa.</p>
+
+  <div class="tabela">
+    <table>
+      <tr><th>Posição do R</th><th>Som</th><th>Exemplos</th></tr>
+      <tr><td>No <b>início</b> da palavra</td><td>Forte (gutural)</td><td>rato, rei, rádio, rico, roupa</td></tr>
+      <tr><td>Antes de uma <b>consoante</b></td><td>Forte (gutural, mais curto)</td><td>corta, porta, carne, inferno</td></tr>
+      <tr><td><b>RR</b> (duplo, sempre entre vogais)</td><td>Forte (gutural)</td><td>errado, corrida, guerra, burro, sorriso</td></tr>
+      <tr><td><b>R</b> entre vogais</td><td>Fraco (vibração simples)</td><td>cara, muro, careca, garoto, girafa</td></tr>
+    </table>
+  </div>
+
+  <div class="duo">
+    <div>
+      <h4>Usamos o R forte para…</h4>
+      <ul>
+        <li>qualquer R no início de uma palavra;</li>
+        <li>um R sozinho antes de outra consoante (por-ta);</li>
+        <li>sempre que aparece escrito RR.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Usamos o R fraco para…</h4>
+      <ul>
+        <li>um único R colocado entre duas vogais (ca-ra), nunca no início da palavra e nunca duplicado.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="caixa aviso">
+    <b>Cuidado B1 —</b>
+    <ul>
+      <li>Depois de <b>N</b> ou <b>L</b> dentro da mesma palavra, um único R também se pronuncia <b>forte</b>, como se estivesse no início: <i>gen-ro</i>, <i>hon-ra</i>, <i>mel-ro</i>. Visualmente parece "entre letras", mas o som é o mesmo do R inicial — não confunda com o R entre vogais.</li>
+      <li>No fim das palavras (sobretudo nos infinitivos: <i>falar, comer, partir</i>), muitos falantes de Portugal pronunciam o R final de forma muito suave, quase apagada — é normal ouvir pouco ou nenhum som de R nessa posição na fala rápida.</li>
+    </ul>
+  </div>
+
+  <div class="caixa verde">
+    <b>Nota de português europeu:</b> o R forte em Portugal soa, geralmente, como um som gutural produzido na garganta (parecido com o R francês), diferente da vibração múltipla da língua que existe, por exemplo, em espanhol. No Brasil, este mesmo R forte varia muito consoante a região — pode soar como um "h" aspirado (como em inglês <i>house</i>) — e o R final dos infinitivos costuma manter-se mais audível do que em Portugal.
+  </div>
+</section>
+<!-- ####### FIM GRAMÁTICA ####### -->
+
+<!-- ####### EXEMPLOS: substituir todo o interior da secção ####### -->
+<section id="ex">
+  <h2>2. Exemplos comentados</h2>
+  <p>Leia cada palavra em voz alta antes de ler a explicação. Tente ouvir a diferença entre o R forte e o R fraco.</p>
+
+  <h3>2.1 R no início da palavra → forte</h3>
+  <div class="ex"><b>rato, rei, rádio, rico, roupa</b> → o R inicial soa sempre forte e gutural, tal como um RR. <span class="dica">Não existe R fraco no início de nenhuma palavra portuguesa.</span></div>
+
+  <h3>2.2 R antes de consoante → forte</h3>
+  <div class="ex"><b>corta, porta, carne, inferno</b> → antes de outra consoante, o R usa a garganta, embora seja um pouco mais curto do que o RR ou o R inicial. <span class="dica">Comparar: <i>por-ta</i> (forte) com <i>po-ra</i>, que não existe — sem consoante a seguir, esta posição não acontece.</span></div>
+
+  <h3>2.3 RR → sempre forte</h3>
+  <div class="ex"><b>errado, corrida, guerra, burro, sorriso</b> → o RR escreve-se sempre entre vogais mas soa sempre forte, nunca fraco. <span class="dica">Comparar: <i>corrida</i> (forte) com <i>corida</i>, que não existe em português — a grafia com dois RR é obrigatória para manter o som forte.</span></div>
+
+  <h3>2.4 R entre vogais → fraco</h3>
+  <div class="ex"><b>cara, muro, careca, garoto, girafa</b> → um único R entre duas vogais é sempre a vibração simples e rápida da língua. <span class="dica">Comparar: <i>caro</i> (fraco, "querido/caro") com <i>carro</i> (forte, "automóvel") — a única diferença entre as duas palavras é este som.</span></div>
+
+  <h3>2.5 Pares mínimos — a mesma grafia quase, sons diferentes</h3>
+  <div class="ex"><b>caro</b> (fraco) / <b>carro</b> (forte) → um relógio pode ser <i>caro</i>; para ir trabalhar uso o <i>carro</i>.</div>
+  <div class="ex"><b>coro</b> (fraco) / <b>corro</b> (forte) → o <i>coro</i> da igreja canta aos domingos; eu <i>corro</i> todas as manhãs. <span class="dica">Repare: a forma verbal "corro" (eu corro) escreve-se sempre com RR precisamente para soar forte.</span></div>
+  <div class="ex"><b>moro</b> (fraco) / <b>morro</b> (forte) → eu <i>moro</i> em Lisboa; no Rio de Janeiro há um <i>morro</i> (colina) muito conhecido. <span class="dica">Dois significados completamente diferentes, distinguidos apenas por este som.</span></div>
+</section>
+<!-- ####### FIM EXEMPLOS ####### -->
+
+<!-- ####### PRÁTICA: substituir todo o interior da secção ####### -->
+<section id="pratica">
+  <h2>3. Prática</h2>
+
+  <!-- ---- Tipo 1: classificar o som (escolha) ---- -->
+  <h3>Exercício A — Forte ou fraco?</h3>
+  <p class="dica">Diga a palavra em voz alta e escolha o som do R.</p>
+  <div class="item">
+    <span class="num">1</span>
+    <span class="frase">RATO — <select data-a="forte"><option value="">—</option><option>forte</option><option>fraco</option></select></span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">2</span>
+    <span class="frase">CARA — <select data-a="fraco"><option value="">—</option><option>forte</option><option>fraco</option></select></span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">3</span>
+    <span class="frase">CORTA — <select data-a="forte"><option value="">—</option><option>forte</option><option>fraco</option></select></span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">4</span>
+    <span class="frase">GUERRA — <select data-a="forte"><option value="">—</option><option>forte</option><option>fraco</option></select></span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">5</span>
+    <span class="frase">MURO — <select data-a="fraco"><option value="">—</option><option>forte</option><option>fraco</option></select></span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">6</span>
+    <span class="frase">CARRO — <select data-a="forte"><option value="">—</option><option>forte</option><option>fraco</option></select></span>
+    <div class="fb"></div>
+  </div>
+  <div class="barra">
+    <button onclick="corrigir('pratica')">Verificar tudo</button>
+    <button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button>
+    <button class="sec" onclick="limpar('pratica')">Limpar</button>
+  </div>
+
+  <!-- ---- Tipo 2: preencher com a palavra certa (pares mínimos) ---- -->
+  <h3>Exercício B — Qual das duas palavras?</h3>
+  <p class="dica">Complete a frase com a palavra certa. Repare no significado, não só no som.</p>
+  <div class="item">
+    <span class="num">1</span>
+    <span class="frase">O <input type="text" data-a="carro" autocapitalize="off" autocomplete="off"> dela é azul e é novo. (caro / carro)</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">2</span>
+    <span class="frase">Este relógio é muito <input type="text" data-a="caro" autocapitalize="off" autocomplete="off">, custa quinhentos euros. (caro / carro)</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">3</span>
+    <span class="frase">Todas as manhãs, eu <input type="text" data-a="corro" autocapitalize="off" autocomplete="off"> cinco quilómetros no parque. (coro / corro)</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">4</span>
+    <span class="frase">O <input type="text" data-a="coro" autocapitalize="off" autocomplete="off"> da igreja canta muito bem aos domingos. (coro / corro)</span>
+    <div class="fb"></div>
+  </div>
+  <div class="barra">
+    <button onclick="corrigir('pratica')">Verificar tudo</button>
+    <button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button>
+    <button class="sec" onclick="limpar('pratica')">Limpar</button>
+  </div>
+
+  <!-- ---- Tipo 3: a armadilha — R depois de N ou L ---- -->
+  <h3>Exercício C — Depois de N ou L (a armadilha)</h3>
+  <p class="dica">Estas palavras têm o R "no meio" da palavra, mas o som não é o mesmo do R entre vogais. Escolha forte ou fraco.</p>
+  <div class="item">
+    <span class="num">1</span>
+    <span class="frase">HONRA — <select data-a="forte"><option value="">—</option><option>forte</option><option>fraco</option></select></span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">2</span>
+    <span class="frase">GENRO — <select data-a="forte"><option value="">—</option><option>forte</option><option>fraco</option></select></span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">3</span>
+    <span class="frase">MELRO — <select data-a="forte"><option value="">—</option><option>forte</option><option>fraco</option></select></span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">4</span>
+    <span class="frase">GAROTO — <select data-a="fraco"><option value="">—</option><option>forte</option><option>fraco</option></select></span>
+    <div class="fb"></div>
+  </div>
+  <div class="barra">
+    <button onclick="corrigir('pratica')">Verificar tudo</button>
+    <button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button>
+    <button class="sec" onclick="limpar('pratica')">Limpar</button>
+  </div>
+
+  <!-- ---- Tipo 4: construir a frase inteira (terminar sempre por aqui) ---- -->
+  <h3>Exercício D — Ordenar as frases</h3>
+  <p class="dica">Escreva a frase completa, com maiúscula e ponto final. Depois, leia-a em voz alta e preste atenção a todos os R.</p>
+  <div class="item">
+    <span class="num">1</span>
+    <span class="frase">roupa / a / rica / comprou / senhora</span>
+    <input class="longo" type="text" data-a="A senhora rica comprou roupa." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">2</span>
+    <span class="frase">carro / muito / é / caro / este</span>
+    <input class="longo" type="text" data-a="Este carro é muito caro." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">3</span>
+    <span class="frase">porta / a / errada / abriu / rapaz / o</span>
+    <input class="longo" type="text" data-a="O rapaz abriu a porta errada." autocomplete="off">
+    <div class="fb"></div>
+  </div>
+  <div class="barra">
+    <button onclick="corrigir('pratica')">Verificar tudo</button>
+    <button class="sec" onclick="mostrar('pratica')">Mostrar soluções</button>
+    <button class="sec" onclick="limpar('pratica')">Limpar</button>
+  </div>
+</section>
+<!-- ####### FIM PRÁTICA ####### -->
+
+<!-- ####### LEITURA: substituir todo o interior da secção ####### -->
+<section id="leitura">
+  <h2>4. Prática de leitura</h2>
+  <p class="dica">Leia o texto duas vezes: a primeira para entender a história, a segunda para reparar nas formas destacadas.</p>
+
+  <div class="leitura">
+    <h3>Um Passeio ao Porto</h3>
+    <p><span class="g">Rui</span> e a irmã, <span class="g">Rita</span>, moram em Lisboa, mas decidiram passar um fim de semana no Porto. Saíram cedo de manhã e apanharam o comboio na estação. <span class="g">Rui</span> estava muito contente: adora aquela cidade e queria mostrar a <span class="g">Ribeira</span> à irmã.</p>
+    <p>Quando chegaram, foram logo passear junto ao rio. Rita ficou fascinada com as <span class="g">ruas</span> estreitas, com as casas coloridas e com a Torre dos Clérigos, tão alta que quase tocava as nuvens. «Vamos subir até ao topo?», perguntou Rita. Rui riu-se: «Só se quiseres ver a <span class="g">cara</span> vermelha de cansaço!»</p>
+    <p>Depois do almoço, entraram numa loja pequena para comprar uma <span class="g">garrafa</span> de vinho do Porto para os pais. O vendedor, um homem simpático, explicou tudo sobre a diferença entre o vinho branco e o tinto. Enquanto saíam da loja, ouviram, ao longe, o som de uma <span class="g">guitarra</span> portuguesa. Pararam para ouvir, sentados <span class="g">perto</span> do rio, até a hora do jantar chegar.</p>
+    <p>À noite, começou a chover com força. Como não tinham trazido <span class="g">guarda</span>-chuva, tiveram de <span class="g">correr</span> pelas ruas para chegar ao hotel. No caminho, Rui <span class="g">escorregou</span> numa pedra molhada e caiu, rindo-se muito. «Foi um <span class="g">erro</span> não trazer o guarda-chuva!», disse ele, ainda a rir.</p>
+    <p>No dia seguinte, antes de voltarem para Lisboa, <span class="g">Rita</span> comprou um livro na Livraria Lello, um dos lugares mais bonitos que já tinha visto. «Vamos voltar cedo», disse <span class="g">Rui</span>, «porque esta cidade merece mais do que um fim de semana.»</p>
+  </div>
+
+  <h3>4.1 Compreensão do texto</h3>
+  <div id="quiz" class="quiz">
+    <div class="item">
+      <span class="num">1</span>
+      <span class="frase"><b>Onde moram Rui e Rita?</b>
+        <label><input type="radio" name="q1" value="a" data-ok="1"> <span>Em Lisboa</span></label>
+        <label><input type="radio" name="q1" value="b"> <span>No Porto</span></label>
+        <label><input type="radio" name="q1" value="c"> <span>Numa aldeia perto do Porto</span></label>
+      </span>
+      <div class="fb"></div>
+    </div>
+    <div class="item">
+      <span class="num">2</span>
+      <span class="frase"><b>O que quis mostrar Rui à irmã, logo depois de chegarem?</b>
+        <label><input type="radio" name="q2" value="a"> <span>A Livraria Lello</span></label>
+        <label><input type="radio" name="q2" value="b" data-ok="1"> <span>A Ribeira, junto ao rio</span></label>
+        <label><input type="radio" name="q2" value="c"> <span>A estação de comboios</span></label>
+      </span>
+      <div class="fb"></div>
+    </div>
+    <div class="item">
+      <span class="num">3</span>
+      <span class="frase"><b>O que compraram na loja pequena?</b>
+        <label><input type="radio" name="q3" value="a"> <span>Um livro</span></label>
+        <label><input type="radio" name="q3" value="b"> <span>Uma guitarra</span></label>
+        <label><input type="radio" name="q3" value="c" data-ok="1"> <span>Uma garrafa de vinho do Porto</span></label>
+      </span>
+      <div class="fb"></div>
+    </div>
+    <div class="item">
+      <span class="num">4</span>
+      <span class="frase"><b>Porque tiveram de correr pelas ruas à noite?</b>
+        <label><input type="radio" name="q4" value="a" data-ok="1"> <span>Porque começou a chover e não tinham guarda-chuva</span></label>
+        <label><input type="radio" name="q4" value="b"> <span>Porque estavam atrasados para o comboio</span></label>
+        <label><input type="radio" name="q4" value="c"> <span>Porque a loja ia fechar</span></label>
+      </span>
+      <div class="fb"></div>
+    </div>
+    <div class="item">
+      <span class="num">5</span>
+      <span class="frase"><b>Pelo fim do texto, o que se percebe sobre a opinião de Rui em relação ao Porto?</b>
+        <label><input type="radio" name="q5" value="a"> <span>Que ficou desapontado com a viagem</span></label>
+        <label><input type="radio" name="q5" value="b" data-ok="1"> <span>Que gosta tanto da cidade que um fim de semana não é suficiente</span></label>
+        <label><input type="radio" name="q5" value="c"> <span>Que prefere Lisboa</span></label>
+      </span>
+      <div class="fb"></div>
+    </div>
+  </div>
+  <div class="barra"><button onclick="corrigirQuiz()">Verificar compreensão</button></div>
+
+  <h3>4.2 Caça à gramática</h3>
+  <p class="dica">Para cada palavra destacada no texto, diga porque é que o R soa forte ou fraco.</p>
+  <div class="item">
+    <span class="num">1</span>
+    <span class="frase">Em «Rui» e «Rita», o R soa forte porque está
+      <select data-a="no início da palavra"><option value="">—</option><option>no início da palavra</option><option>entre vogais</option></select>.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">2</span>
+    <span class="frase">Em «cara», o R soa fraco porque está
+      <select data-a="entre vogais"><option value="">—</option><option>no início da palavra</option><option>entre vogais</option></select>.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">3</span>
+    <span class="frase">Em «garrafa» e «guitarra», o R soa forte porque está escrito com
+      <select data-a="RR"><option value="">—</option><option>RR</option><option>um único R</option></select>.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">4</span>
+    <span class="frase">Em «perto», o R soa forte porque vem antes de uma
+      <select data-a="consoante"><option value="">—</option><option>consoante</option><option>vogal</option></select>.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">5</span>
+    <span class="frase">Em «escorregou», o R do meio (-rregou) soa forte porque, embora esteja entre vogais, está escrito
+      <select data-a="com dois RR"><option value="">—</option><option>com dois RR</option><option>com um só R</option></select>.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="item">
+    <span class="num">6</span>
+    <span class="frase">Em «Ribeira» e «ruas», o R soa forte pela mesma razão que em «Rui»: está
+      <select data-a="no início da palavra"><option value="">—</option><option>no início da palavra</option><option>entre vogais</option></select>.</span>
+    <div class="fb"></div>
+  </div>
+  <div class="barra">
+    <button onclick="corrigir('leitura')">Verificar</button>
+    <button class="sec" onclick="mostrar('leitura')">Mostrar soluções</button>
+  </div>
+
+  <h3>4.3 Vocabulário do texto</h3>
+  <div class="glossario">
+    <div><b>a Ribeira</b> — bairro histórico do Porto junto ao rio Douro</div>
+    <div><b>a torre</b> — construção alta e estreita, como a Torre dos Clérigos</div>
+    <div><b>a garrafa</b> — objeto de vidro usado para guardar líquidos, como o vinho</div>
+    <div><b>a guitarra (portuguesa)</b> — instrumento de cordas típico de Portugal</div>
+    <div><b>o guarda-chuva</b> — objeto que se abre para proteger da chuva</div>
+    <div><b>escorregar</b> — perder o equilíbrio sobre uma superfície molhada ou lisa</div>
+    <div><b>rir-se</b> — fazer o som e o gesto de alegria com a boca e os olhos</div>
+    <div><b>ao longe</b> — a uma certa distância, não muito perto</div>
+    <div><b>fascinado / fascinada</b> — muito interessado, quase encantado com algo</div>
+    <div><b>merecer</b> — ser digno de algo, ter direito a algo por bom motivo</div>
+  </div>
+</section>
+<!-- ####### FIM LEITURA ####### -->
+
+<!-- ####### ESCRITA: substituir todo o interior da secção ####### -->
+<section id="escrita">
+  <h2>5. Desafio de escrita</h2>
+  <p>Escreva entre 100 e 130 palavras sobre <b>uma viagem de fim de semana que fez ou gostaria de fazer</b>. Use obrigatoriamente:</p>
+  <ul>
+    <li>pelo menos três palavras com R forte no início (por exemplo: <i>Rui, rio, roupa, rápido, rua</i>);</li>
+    <li>pelo menos duas palavras com RR (por exemplo: <i>carro, guerra, torre, garrafa, correr</i>);</li>
+    <li>pelo menos duas palavras com R fraco entre vogais (por exemplo: <i>cara, hora, agora, primeira, para</i>);</li>
+    <li>no final, sublinhe (ou escreva entre parêntesis) todas as palavras com R que usou.</li>
+  </ul>
+  <textarea placeholder="Escreva aqui…"></textarea>
+  <details>
+    <summary>Ver um texto-modelo</summary>
+    <p>No próximo fim de semana quero ir até ao <b>Porto</b> visitar a minha <b>irmã</b>. Vou apanhar o comboio bem cedo, <b>rápido</b> e sem <b>paragens</b>. Quando chegar, vamos passear junto ao <b>rio</b> e tirar fotografias da <b>torre</b> mais alta da cidade. À <b>hora</b> do almoço, vamos comer numa marisqueira que a minha irmã adora, e depois vamos ver um jogo de futebol — espero que não seja uma <b>guerra</b>! De <b>tarde</b>, vamos comprar uma <b>garrafa</b> de vinho para levar para casa. Vai ser a <b>primeira</b> vez que viajo sozinho até lá, mas não tenho medo: agora já conheço bem o caminho.</p>
+  </details>
+  <p class="dica">Antes de terminar, releia o texto em voz alta: diga cada palavra com R com atenção ao som (forte ou fraco) e pergunte a si próprio se a posição do R na palavra corresponde ao som que fez.</p>
+</section>
+<!-- ####### FIM ESCRITA ####### -->
+
+<div id="placar">
+  <div>Pontuação: <span class="pontos" id="pts">0 / 0</span></div>
+  <span id="msg">Verifique cada exercício para somar pontos.</span>
+</div>
+
+</div>
+
+<script>
+/* Motor de autocorreção. Não é preciso alterar nada aqui.
+   Cada campo com data-a é corrigido automaticamente.
+   Alternativas aceites separam-se com |  */
+let acertos = 0, total = 0;
+
+function limparTexto(s){
+  return (s||"").toLowerCase().trim().replace(/[.,;:!?«»"']/g,"").replace(/\s+/g," ");
+}
+function semAcentos(s){
+  return limparTexto(s).normalize("NFD").replace(new RegExp("[\\u0300-\\u036f]","g"),"");
+}
+function atualizarPlacar(){
+  document.getElementById("pts").textContent = acertos + " / " + total;
+  const m = document.getElementById("msg");
+  if(total === 0){ m.textContent = "Verifique cada exercício para somar pontos."; return; }
+  const p = acertos/total;
+  m.textContent = p === 1 ? "Excelente! Domina esta matéria."
+    : p >= .8 ? "Muito bom — reveja apenas os erros."
+    : p >= .5 ? "Bom começo. Volte à secção 1 e repita o exercício."
+    : "Releia a gramática com calma e tente outra vez.";
+}
+function avaliar(campo){
+  const esperadas = campo.dataset.a.split("|");
+  const dada = campo.value;
+  if(!limparTexto(dada)) return "vazio";
+  for(const e of esperadas){ if(limparTexto(dada) === limparTexto(e)) return "ok"; }
+  for(const e of esperadas){ if(semAcentos(dada) === semAcentos(e)) return "quase"; }
+  return "erro";
+}
+function corrigir(secId){
+  acertos = 0; total = 0;
+  document.querySelectorAll("[data-a]").forEach(c => {
+    const fb = c.closest(".item").querySelector(".fb");
+    const r = avaliar(c);
+    const revelado = c.dataset.revelado === "1";
+    if(r !== "vazio" && !revelado){ total++; if(r === "ok" || r === "quase") acertos++; }
+    if(c.closest("#"+secId) && !revelado){
+      if(r === "vazio"){ fb.className="fb"; fb.textContent=""; }
+      else if(r === "ok"){ fb.className="fb ok"; fb.textContent = "✔ Certo!"; }
+      else if(r === "quase"){ fb.className="fb quase"; fb.textContent = "≈ Quase! Atenção à acentuação: «" + c.dataset.a.split("|")[0] + "»"; }
+      else { fb.className="fb erro"; fb.textContent = "✘ Reveja. Resposta: «" + c.dataset.a.split("|")[0] + "»"; }
+    }
+  });
+  document.querySelectorAll("#quiz .item").forEach(it => {
+    const marcado = it.querySelector("input[type=radio]:checked");
+    if(marcado){ total++; if(marcado.dataset.ok) acertos++; }
+  });
+  atualizarPlacar();
+}
+function corrigirQuiz(){
+  document.querySelectorAll("#quiz .item").forEach(it => {
+    const fb = it.querySelector(".fb");
+    const marcado = it.querySelector("input[type=radio]:checked");
+    if(!marcado){ fb.className="fb"; fb.textContent="— ainda sem resposta"; return; }
+    if(marcado.dataset.ok){ fb.className="fb ok"; fb.textContent="✔ Certo!"; }
+    else {
+      const certa = it.querySelector("input[data-ok]").parentElement.textContent.trim();
+      fb.className="fb erro"; fb.textContent="✘ Não. A resposta certa é: " + certa;
+    }
+  });
+  corrigir("leitura");
+}
+function mostrar(secId){
+  document.querySelectorAll("#"+secId+" [data-a]").forEach(c => {
+    const v = c.dataset.a.split("|")[0];
+    c.value = v;
+    c.dataset.revelado = "1";
+    const fb = c.closest(".item").querySelector(".fb");
+    fb.className="fb quase"; fb.textContent="Solução: " + v;
+  });
+}
+function limpar(secId){
+  document.querySelectorAll("#"+secId+" [data-a]").forEach(c => {
+    c.value = "";
+    delete c.dataset.revelado;
+    const fb = c.closest(".item").querySelector(".fb");
+    fb.className="fb"; fb.textContent="";
+  });
+  acertos = 0; total = 0; atualizarPlacar();
+}
+document.querySelectorAll("[data-a]").forEach(c => {
+  c.addEventListener("keydown", e => {
+    if(e.key === "Enter"){ e.preventDefault(); corrigir(c.closest("section").id); }
+  });
+});
+atualizarPlacar();
+</script>
+</body>
+</html>
